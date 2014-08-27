@@ -1,3 +1,8 @@
+#Nodejs Erweiterungen
 /node_modules
+
+#Grunt Sass Modul
 /.sass-cache
+
+#Alle Datenbanken ignorieren
 /content/data

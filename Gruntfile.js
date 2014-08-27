@@ -1,8 +1,8 @@
 module.exports = function(grunt) {
   grunt.initConfig({
-    sass: {                             
-      dist: {                            
-        options: {                       
+    sass: {
+      dist: {
+        options: {
           style: "compressed"
         },
         src: [

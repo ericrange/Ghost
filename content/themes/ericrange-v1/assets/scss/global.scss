@@ -1,0 +1,14 @@
+@import "vendor/normalize.scss";
+
+@import "mixins.scss";
+@import "index.scss";
+@import "post.scss";
+
+* {
+	font-family: "Open Sans", Helvetica, Arial;
+}
+
+h1, h2, h3 {
+	font-weight: lighter;
+	letter-spacing: -1px;
+}

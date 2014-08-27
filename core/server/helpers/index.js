@@ -385,6 +385,10 @@ coreHelpers.blog_url = function (context, options) {
     return config.theme().url.toString();
 };
 
+coreHelpers.blog_lang = function () {
+    return "de";
+};
+
 coreHelpers.ghost_script_tags = function () {
     var scriptList = isProduction ? scriptFiles.production : scriptFiles.development;
 

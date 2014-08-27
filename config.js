@@ -8,7 +8,6 @@ var path = require('path'),
 config = {
     // ### Development **(default)**
     development: {
-        lang: 'de',
         // The url to use when providing links to the site, E.g. in RSS and email.
         url: 'http://eric-range.de',
 
@@ -49,15 +48,22 @@ config = {
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-        lang: 'de',
         url: 'http://eric-range.de',
         mail: {},
         database: {
-            client: 'sqlite3',
+            /*client: 'sqlite3',
             connection: {
                 filename: path.join(__dirname, '/content/data/ghost.db')
             },
-            debug: false
+            debug: false*/
+            client: 'mysql',
+            connection: {
+                host: '127.0.0.1',
+                user: 'ghost-user',
+                password: 'ghost-pass',
+                database: 'ghost',
+                charset: 'utf8'
+            }
         },
         server: {
             // Host to be passed to node's `net.Server#listen()`

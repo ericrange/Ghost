@@ -6,3 +6,5 @@
 
 #Alle Datenbanken ignorieren
 /content/data
+
+config.js

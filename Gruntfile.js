@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: "content/themes/ericrange-v1/assets/scss/**/*.scss",
-        tasks: ["sass"]
+        tasks: ["sass", "autoprefixer"]
       }
     },
     uglify: {
@@ -26,9 +26,17 @@ module.exports = function(grunt) {
           ],
         }
       }
+    },
+    autoprefixer: {
+      dist: {
+          files: {
+              "content/themes/ericrange-v1/assets/css/prefixed.styles.min.css":
+                "content/themes/ericrange-v1/assets/css/styles.min.css"
+          }
+      }
     }
   });
-
+  grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks("grunt-contrib-sass");
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks('grunt-contrib-uglify');

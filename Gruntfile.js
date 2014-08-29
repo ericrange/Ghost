@@ -31,15 +31,17 @@ module.exports = function(grunt) {
       dist: {
           files: {
               "content/themes/ericrange-v1/assets/css/prefixed.styles.min.css":
-                "content/themes/ericrange-v1/assets/css/styles.min.css"
+                "content/themes/ericrange-v1/assets/css/styles.min.css",
+              "content/themes/ericrange-v1/assets/css/prefixed.defaults.css":
+                "content/themes/ericrange-v1/assets/css/defaults.css"
           }
       }
     }
   });
-  grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks("grunt-autoprefixer");
   grunt.loadNpmTasks("grunt-contrib-sass");
   grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks("grunt-contrib-uglify");
 
   grunt.registerTask("default", ["watch"]);
   grunt.registerTask("scss", ["sass"]);

@@ -3,8 +3,3 @@
 
 #Grunt Sass Modul
 /.sass-cache
-
-#Alle Datenbanken ignorieren
-/content/data
-
-/config.js

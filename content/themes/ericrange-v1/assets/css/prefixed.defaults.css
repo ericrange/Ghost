@@ -209,7 +209,6 @@ hr {
 }
 
 blockquote {
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 1.7em 0 1.7em -2.2em;
     padding: 0 0 0 1.6em;
@@ -251,7 +250,6 @@ code, tt {
 }
 
 pre {
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0 0 1.7em 0;
     border: #E3EDF3 1px solid;
@@ -291,7 +289,6 @@ kbd {
 }
 
 table {
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 1.7em 0;
     width: 100%;
@@ -475,7 +472,6 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .blog-logo img {
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
     height: 38px;
@@ -484,7 +480,6 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .back-button {
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: inline-block;
     float: left;
@@ -509,7 +504,6 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .subscribe-button {
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: inline-block;
     float: right;
@@ -964,7 +958,6 @@ body:not(.post-template) .post-title {
 }
 
 .author-image {
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
     position: absolute;
@@ -1262,7 +1255,6 @@ body:not(.post-template) .post-title {
     }
 
     .main-header {
-        -moz-box-sizing: border-box;
         box-sizing: border-box;
         height: auto;
         min-height: 240px;

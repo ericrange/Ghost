@@ -51,17 +51,14 @@ config = {
         url: 'http://eric-range.de',
         mail: {},
         database: {
-            /*client: 'sqlite3',
-            connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
-            },
-            debug: false*/
             client: 'mysql',
             connection: {
                 host: '127.0.0.1',
-                user: 'ghost-user',
-                password: 'ghost-pass',
-                database: 'ghost',
+                user: 'web-ghost',
+                
+                /* You can only connect to MySQL from 127.0.0.1 ;) */
+                password: 'Pq5N6zObD3',
+                database: 'eric-range.de',
                 charset: 'utf8'
             }
         },

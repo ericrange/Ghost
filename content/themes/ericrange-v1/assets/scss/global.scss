@@ -22,3 +22,19 @@ h1, h2, h3 {
 	font-size: 24px;
 	color: #999;
 }
+
+.main-header {
+	border-bottom: solid #3CB371 10px;
+	background: rgba(60, 179, 113, 0.05);
+	text-align: left;
+}
+
+.post-footer {
+	padding-bottom: 40px;
+}
+
+.post-meta {
+	a[href*="/tag/"] {
+		border-bottom: dotted #3CB371 1px;
+	}
+}

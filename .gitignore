@@ -3,3 +3,5 @@
 
 #Grunt Sass Modul
 /.sass-cache
+
+/content/data/*

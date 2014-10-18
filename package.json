@@ -92,7 +92,7 @@
     "grunt-update-submodules": "^0.4.1",
     "matchdep": "^0.3.0",
     "mocha": "^1.21.4",
-    "mysql": "^2.5.1",
+    "mysql": "^2.5.2",
     "nock": "^0.48.0",
     "request": "^2.44.0",
     "require-dir": "^0.1.0",

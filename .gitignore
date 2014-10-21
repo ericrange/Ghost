@@ -1,7 +1,7 @@
 #Nodejs Erweiterungen
-/node_modules
+node_modules
 
 #Grunt Sass Modul
-/.sass-cache
+.sass-cache
 
-/content/data/
+content/data/*

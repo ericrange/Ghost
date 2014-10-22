@@ -17,18 +17,46 @@ h1, h2, h3 {
 	font-weight: lighter;
 	font-size: 46px;
 	margin-bottom: 0px;
+	padding-left: 60px;
 }
 
 .page-description {
 	font-size: 24px;
 	color: #999;
 	letter-spacing: 0px;
+	padding-left: 60px;
 }
 
 .main-header {
 	border-bottom: solid #3CB371 10px;
 	background: rgba(60, 179, 113, 0.05);
 	text-align: left;
+
+	.custom-logo {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+
+		.letter {
+			font-family: "Open Sans";
+			font-size: 52px;
+			font-weight: lighter;
+			color: #3CB371;
+
+			&.e {
+				transform: rotateY(180deg);
+				width: 25px;
+				float: left;
+				margin-right: -13px;
+			}
+
+			&.r {
+				float: left;
+				margin-right: 10px;
+				margin-top: 16px;
+			}
+		}
+	}
 }
 
 .post-footer {

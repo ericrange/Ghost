@@ -20,7 +20,7 @@ h3 {
     font-size: 46px;
     margin-bottom: 0;
     padding-left: 60px;
-
+    margin: 0;
 }
 .page-description {
     font-size: 24px;
@@ -29,42 +29,51 @@ h3 {
     padding-left: 60px;
 
 }
+.overlay {
+    height: 30%!important;
+}
 .contact-button {
-	padding: 0px!important;
+    padding: 0!important;
 }
 .subscribe-button {
-	margin-right: 0px!important;
+    margin-right: 0px!important;
 }
-.subscribe-button, .contact-button {
+.subscribe-button,
+.contact-button {
     border: none;
-border-radius: 50%;
-background: mediumseagreen;
-height: 40px;
-width: 40px;
-padding: 4px 0 0 1px;
-display: inline-block;
-float: right;
-text-align: center;
-line-height: 35px;
-box-sizing: border-box;
-margin-right: 5px;
-	.octicon {
-		color: white;
-		font-size: 18px;
-	}
+    border-radius: 50%;
+    background: mediumseagreen;
+    height: 40px;
+    width: 40px;
+    padding: 4px 0 0 1px;
+    display: inline-block;
+    float: right;
+    text-align: center;
+    line-height: 35px;
+    box-sizing: border-box;
+    margin-right: 5px;
+    .octicon {
+        color: white;
+        font-size: 18px;
 
-	&:hover {
-		background: mediumseagreen!important;
-		.octicon {
-			color: #fff;
-		}
-	}
+    }
+    &:hover {
+        background: mediumseagreen!important;
+        .octicon {
+            color: #fff;
+        }
+    }
+
 }
 .main-header {
     border-bottom: solid #3cb371 10px;
-    background: rgba(60, 179, 113, 0.05);
     text-align: left;
 
+    .main-header-content {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 25px 35px;
+
+    }
     .custom-logo {
         position: absolute;
         top: 50%;

@@ -2,8 +2,8 @@
 {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
 {{! The big featured header }}
-<header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
-    <nav class="main-nav overlay clearfix">
+<header role="banner" class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+    <nav role="navigation" class="main-nav overlay clearfix">
         {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
         {{> "rss"}}
     </nav>
@@ -21,7 +21,7 @@
 </header>
 
 {{! The main content area on the homepage }}
-<main id="content" class="content" role="main">
+<main role="main" id="content" class="content">
 
     {{! The tag below includes the post loop - partials/loop.hbs }}
     {{> "loop"}}

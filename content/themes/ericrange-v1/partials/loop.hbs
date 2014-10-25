@@ -5,18 +5,18 @@
 
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
-<article class="{{post_class}}">
+<article role="article" class="{{post_class}}" itemscope itemType="http://schema.org/BlogPosting">
     <header class="post-header">
-        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+        <h2 class="post-title"><a href="{{url}}" itemprop="headline">{{{title}}}</a></h2>
     </header>
-    <section class="post-excerpt">
-        <p>{{excerpt words="50"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
-    </section>
+    <p class="post-excerpt" itemprop="description">{{excerpt words="50"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
     <footer class="post-meta">
-        {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}}
-        {{author}}
-        {{tags prefix=" on "}} 
-        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> 
+        <span class="author" itemprop="author">
+            {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="Author image"/>{{/if}}
+            {{author}}
+        </span>
+        <span class="tags" itemprop="keywords">{{tags prefix=" on "}}</span>
+        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}" itemprop="datePublished">{{date format="DD MMMM YYYY"}}</time>
     </footer>
 </article>
 {{/foreach}}

@@ -10,47 +10,50 @@
 
 <main class="content" role="main">
 
-    <article class="{{post_class}}">
+    <article class="{{post_class}}" itemscope itemType="http://schema.org/BlogPosting">
     {{! Everything inside the #post tags pulls data from the post }}
     {{#post}}
 
         <header class="post-header">
-            <h1 class="post-title">{{title}}</h1>
-            <section class="post-meta">
-                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD. MMMM YYYY"}}</time> {{tags prefix=" in "}} von <span class="author">{{author.name}}</span>
-            </section>
+            <h1 class="post-title" itemprop="headline">{{title}}</h1>
+            <div class="post-meta">
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}" itemprop="datePublished">{{date format="DD. MMMM YYYY"}}</time> <span class="tags" itemprop="keywords">{{tags prefix=" in "}}</span> von <span class="author">{{author.name}}</span>
+            </div>
         </header>
 
-        <section class="post-content">
+        <section class="post-content" itemprop="articleBody">
             {{content}}
         </section>
 
-        <footer class="post-footer">
+        <footer role="contentinfo" class="post-footer">
 
         {{! Everything inside the #author tags pulls data from the author }}
-        {{#author}}
+        <section class="author" itemprop="author">
+            <div itemscope itemtype="http://schema.org/Person">
+                {{#author}}
 
-            {{#if image}}
-            <figure class="author-image">
-                <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
-            </figure>
-            {{/if}}
+                    {{#if image}}
+                    <figure class="author-image" itemprop="image">
+                        <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+                    </figure>
+                    {{/if}}
 
-            <section class="author">
-                <h4><a href="{{url}}">{{name}}</a></h4>
 
-                {{#if bio}}
-                    <p>{{bio}}</p>
-                {{else}}
-                    <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-                {{/if}}
-                <div class="author-meta">
-                    {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
-                    {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
-                </div>
-            </section>
+                        <h4><a href="{{url}}" itemprop="name">{{name}}</a></h4>
 
-        {{/author}}
+                        {{#if bio}}
+                            <p>{{bio}}</p>
+                        {{else}}
+                            <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                        {{/if}}
+                        <div class="author-meta">
+                            {{#if location}}<span class="author-location icon-location" itemprop="homeLocation">{{location}}</span>{{/if}}
+                            {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+                        </div>
+
+                {{/author}}
+            </div>
+        </section>
 
             <section class="share">
                 <h4>Share this post</h4>

@@ -69,7 +69,9 @@ h3 {
     text-align: left;
 
     .main-header-content {
+        background: #333;
         background: rgba(0, 0, 0, 0.5);
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0));
         padding: 25px 35px;
 
     }

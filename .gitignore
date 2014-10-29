@@ -1,9 +1,9 @@
-#Nodejs Erweiterungen
 node_modules
 
-#Grunt Sass Modul
 .sass-cache
 
 content/data/*
 
 bower_components
+
+npm-debug.log

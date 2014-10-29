@@ -5,3 +5,5 @@ node_modules
 .sass-cache
 
 content/data/*
+
+bower_components

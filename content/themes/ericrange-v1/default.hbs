@@ -35,7 +35,7 @@
         <meta property="og:description" content="{{meta_description}}" />
         {{#is "post"}}<meta property="og:type" content="article" />{{/is}}
         {{#is "page"}}<meta property="og:type" content="website" />{{/is}}
-        {{#is "index"}}<meta property="og:type" content="blog" />{{/is}}
+        {{^is "post, page"}}<meta property="og:type" content="blog" />{{/is}}
         <meta property="og:url" content="{{@blog.url}}{{url}}" />
         <meta property="og:image" content="{{@blog.url}}{{asset "favicon.png"}}" />
 

@@ -21,7 +21,11 @@ module.exports = function (grunt) {
 			dist: {
 				options: {},
 				files: {
-					"content/themes/ericrange-v1/assets/js/scripts.min.js": [
+					"content/themes/ericrange-v1/assets/js/sync.scripts.min.js": [
+						"bower_components/platform/platform.js"
+					],
+					"content/themes/ericrange-v1/assets/js/async.scripts.min.js": [
+						"bower_components/jquery/dist/jquery.min.js",
 						"content/themes/ericrange-v1/assets/js/script.js",
 						"content/themes/ericrange-v1/assets/js/vendor/*.js"
 					],

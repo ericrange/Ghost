@@ -12,6 +12,7 @@
         <meta name="HandheldFriendly" content="True" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+        {{! Fonts }}
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
 
         <link rel="author" href="https://plus.google.com/+EricRange/">
@@ -22,6 +23,8 @@
         <link rel="stylesheet" type="text/css" href="{{asset "css/prefixed.defaults.min.css"}}" />
         <link rel="stylesheet" type="text/css" href="{{asset "css/prefixed.styles.min.css"}}" />
         <link rel="stylesheet" type="text/css" href="{{asset "fonts/octicons/octicons.min.css"}}" />
+
+        <script type="text/javascript" src="{{asset "js/sync.scripts.min.js"}}"></script>
 
         {{! Custom: ghost_head}}
         <link rel="canonical" href="{{@blog.url}}{{url}}">
@@ -35,9 +38,9 @@
         {{{body}}}
 
         {{! Ghost outputs important scripts and data with this tag }}
-        {{ghost_foot}}
+        {{! ghost_foot}}
 
-        <script type="text/javascript" src="{{asset "js/scripts.min.js"}}"></script>
+        <script type="text/javascript" src="{{asset "js/async.scripts.min.js"}}"></script>
         <script type="text/javascript">
         var _na={}; _na.id="5425bb20b5eaa94410f122e3"; _na.host="54.72.134.21:3030/"; (function() { var u=(("https:"==document.location.protocol)?"https://":"http://")+_na.host; var d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0];g.type='text/javascript'; g.defer=true;g.async=true;g.src=u+'track.js';s.parentNode.insertBefore(g,s);})();
         </script>

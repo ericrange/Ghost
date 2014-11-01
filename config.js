@@ -33,7 +33,7 @@ config = {
     },
     
     production: {
-        url: 'http://eric-range.de',
+        url: 'https://eric-range.de',
         mail: {},
         database: {
             client: 'mysql',

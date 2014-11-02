@@ -1,19 +1,19 @@
 .home-template {
-	.post {
-		.post-meta {
-			font-size: 16px;
-			color: #3CB371;
-			margin-top: 10px;
+    .post {
+        .post-meta {
+            font-size: 16px;
+            color: #3cb371;
+            margin-top: 10px;
 
-			.author-thumb {
-				position: relative;
-				top: 5px;
-			}
+            .author-thumb {
+                position: relative;
+                top: 5px;
 
-			* {
-				color: #3CB371;
-				text-decoration: none;
-			}
-		}
-	}
+            }
+            * {
+                color: #3cb371;
+                text-decoration: none;
+            }
+        }
+    }
 }

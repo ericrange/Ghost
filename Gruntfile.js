@@ -1,5 +1,18 @@
 module.exports = function (grunt) {
 	grunt.initConfig({
+
+		htmlmin: {
+			dist: {
+				options: {
+					removeComments: true,
+					collapseWhitespace: true
+				},
+				files: {
+
+				}
+			}
+		},
+
 		sass: {
 			dist: {
 				options: {
@@ -11,12 +24,14 @@ module.exports = function (grunt) {
 				dest: "content/themes/ericrange-v1/assets/css/styles.min.css"
 			}
 		},
+
 		watch: {
 			css: {
 				files: "content/themes/ericrange-v1/assets/scss/**/*.scss",
 				tasks: ["sass", "autoprefixer", "cssmin"]
 			}
 		},
+
 		uglify: {
 			dist: {
 				options: {},
@@ -32,6 +47,7 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+
 		autoprefixer: {
 			dist: {
 				files: {
@@ -40,6 +56,7 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+
 		cssmin: {
 			dist: {
 				files: {
@@ -48,11 +65,13 @@ module.exports = function (grunt) {
 			}
 		}
 	});
+	
 	grunt.loadNpmTasks("grunt-autoprefixer");
 	grunt.loadNpmTasks("grunt-contrib-sass");
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
 	grunt.registerTask("default", ["watch"]);
 	grunt.registerTask("scss", ["sass"]);

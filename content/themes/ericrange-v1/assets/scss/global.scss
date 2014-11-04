@@ -83,6 +83,22 @@ nav .items {
     }
 
 }
+paper-button {
+    padding: 0px;
+    margin: 0px;
+}
+.main-nav {
+    a {
+        padding: 10px;
+        span {
+            vertical-align: middle;
+        }
+    }
+    .back {
+        float: left;
+        font-size: 1.5rem;
+    }
+}
 .main-header {
     border-bottom: solid #3cb371 10px;
     text-align: left;

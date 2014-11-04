@@ -4,7 +4,12 @@
     the {body} of the default.hbs template, which contains our header/footer. }}
 
 <nav class="main-nav clearfix">
-    <a class="back-button icon-arrow-left" href="/">Home</a>
+    <paper-button class="back">
+        <a href="/">
+            <span class="mega-octicon octicon-arrow-small-left"></span>
+            Home
+        </a>
+    </paper-button>
     {{> "rss"}}
 </nav>
 

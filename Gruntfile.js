@@ -37,10 +37,10 @@ module.exports = function (grunt) {
 				options: {},
 				files: {
 					"content/themes/ericrange-v1/assets/js/sync.scripts.min.js": [
-						"bower_components/platform/platform.js"
+						"content/themes/ericrange-v1/bower/platform/platform.js"
 					],
 					"content/themes/ericrange-v1/assets/js/async.scripts.min.js": [
-						"bower_components/jquery/dist/jquery.min.js",
+						"content/themes/ericrange-v1/bower/jquery/dist/jquery.min.js",
 						"content/themes/ericrange-v1/assets/js/script.js",
 						"content/themes/ericrange-v1/assets/js/vendor/*.js"
 					],
@@ -71,7 +71,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-htmlmin');
+	//grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
 	grunt.registerTask("default", ["watch"]);
 	grunt.registerTask("scss", ["sass"]);

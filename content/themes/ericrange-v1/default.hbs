@@ -43,6 +43,9 @@
         <link href="/bower/core-icon/core-icon.html" rel="import">
         <link href="/bower/core-icons/core-icons.html" rel="import">
         <link href="/bower/paper-button/paper-button.html" rel="import">
+        <link href="/bower/paper-dialog/paper-dialog.html" rel="import">
+        <link href="/bower/paper-dialog/paper-dialog-transition.html" rel="import">
+        <link href="/bower/paper-input/paper-input.html" rel="import">
 
     </head>
     <body class="{{body_class}}">
@@ -52,7 +55,7 @@
 
         {{! Ghost outputs important scripts and data with this tag }}
         {{! ghost_foot}}
-
+        {{> "modals"}}
         <script type="text/javascript" src="{{asset "js/async.scripts.min.js"}}"></script>
     </body>
 </html>

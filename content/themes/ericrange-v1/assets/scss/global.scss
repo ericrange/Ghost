@@ -25,6 +25,11 @@ nav ul {
     }
 
 }
+input[type="submit"] {
+    border: none;
+    background: none;
+    outline: none;
+}
 .page-title {
     font-weight: lighter;
     font-size: 46px;
@@ -45,9 +50,10 @@ nav .items {
     .contact-me {
         padding: 0!important;
     }
-    .subscribe-me {
+    .rss-me {
         margin-right: 0px!important;
     }
+    .rss-me,
     .subscribe-me,
     .contact-me {
         border: none;
@@ -84,8 +90,8 @@ nav .items {
 
 }
 paper-button {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 .main-nav {
     a {
@@ -93,11 +99,13 @@ paper-button {
         span {
             vertical-align: middle;
         }
+
     }
     .back {
         float: left;
         font-size: 1.5rem;
     }
+
 }
 .main-header {
     border-bottom: solid #3cb371 10px;

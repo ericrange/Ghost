@@ -81,10 +81,10 @@ module.exports = function (grunt) {
 		htmlmin: {                                     // Task
 			dist: {                                      // Target
 				options: {                                 // Target options
-					removeComments: true,
+					/*removeComments: true,
 					collapseWhitespace: true,
 					minifyJS: true,
-					minifyCSS: true
+					minifyCSS: true*/
 				},
 				files: [{
 					expand: true,
@@ -92,6 +92,17 @@ module.exports = function (grunt) {
 					src: ["**/*.html"],
 					dest: "content/themes/ericrange-v1/assets/html/"
 				}]
+			}
+		},
+
+		vulcanize: {
+			default: {
+				options: {
+					
+				},
+				files: {
+					"content/themes/ericrange-v1/assets/build.html": "content/themes/ericrange-v1/assets/polymer-build.html"
+				}
 			}
 		}
 
@@ -105,9 +116,11 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-contrib-coffee");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-htmlmin");
+	grunt.loadNpmTasks('grunt-vulcanize');
 
 	grunt.registerTask("default", ["watch"]);
 	grunt.registerTask("scss", ["sass"]);
 	grunt.registerTask("html", ["htmlmin"]);
+	grunt.registerTask("poly", ["vulcanize"]);
 	grunt.registerTask("js", ["coffee", "jshint", "uglify"]);
 };

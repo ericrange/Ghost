@@ -3,6 +3,7 @@
 
 @import "index.scss";
 @import "post.scss";
+@import "elements.scss";
 
 * {
     font-family: "Open Sans", Helvetica, Arial;
@@ -45,33 +46,79 @@ input[type="submit"] {
 }
 .overlay {
     height: 30%!important;
+
 }
-nav .items {
-    .contact-me {
-        padding: 0!important;
+$items: 4;
+.main-nav {
+    #stack-container {
+        display: block;
+        float: right;
+        overflow: hidden;
+        height: 40px;
+        width: 40px;
+        &:hover {
+            width: (40 * $items) + (5 * ($items - 1)) + px;
+            .menu {
+                .button {
+                    &::before,
+                    &::after {
+                        z-index: 0;
+                    }
+                    &:hover {
+                        &::before,
+                        &::after {
+                            transform: translateX(-50%);
+                            left: 50%;
+                            position: absolute;
+                        }
+                        &::before {
+                            content: "";
+                            width: 0;
+                            height: 0;
+                            border: solid 5px rgba(0, 0, 0, 0);
+                            border-bottom: solid 5px #222;
+                            top: 37px;
+                        }
+                        &::after {
+                            content: attr(tooltip);
+                            font-size: 12px;
+                            background: #222;
+                            color: #fff;
+                            padding: 0 6px;
+                            top: 47px;
+                            line-height: 25px;
+                            border-radius: 5px;
+                        }
+                    }
+
+                }
+                @for $i from 1 through $items {
+                    .button:nth-child(#{$i}) {
+                        right: 40 + ($i * 40) + ($i * 5) + px;
+                    }
+                }
+            }
+        }
+
     }
-    .rss-me {
-        margin-right: 0px!important;
-    }
-    .rss-me,
-    .subscribe-me,
-    .contact-me {
-        border: none;
+    .button {
+        cursor: pointer;
+        transition: right 0.5s 0.2s;
         border-radius: 50%;
         background: mediumseagreen;
         height: 40px;
         width: 40px;
-        display: inline-block;
-        float: right;
         text-align: center;
         line-height: 35px;
-        box-sizing: border-box;
-        margin-right: 5px;
-        position: relative;
+        position: absolute;
+        right: 40px;
+        z-index: 0;
+        &.stack {
+            z-index: 2;
+        }
         .octicon {
             color: white;
             font-size: 18px;
-
         }
         a {
             font-size: 0;
@@ -79,6 +126,9 @@ nav .items {
             height: 100%;
             position: absolute;
             left: 0;
+            padding: 0;
+            top: 0;
+            z-index: 0;
             &:hover {
                 background: none;
                 .octicon {
@@ -89,9 +139,9 @@ nav .items {
     }
 
 }
-paper-button {
-    padding: 0;
-    margin: 0;
+paper-input {
+
+
 }
 .main-nav {
     a {
@@ -104,6 +154,21 @@ paper-button {
     .back {
         float: left;
         font-size: 1.5rem;
+        border: dotted 1px #999;
+        a {
+            color: #999;
+            &::before {
+                content: "\e005";
+                font-family: icons;
+                font-size: 14px;
+                vertical-align: middle;
+                margin-right: 3px;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            border: none;
+        }
     }
 
 }

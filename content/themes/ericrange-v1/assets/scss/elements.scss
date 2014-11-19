@@ -1,0 +1,40 @@
+paper-dialog {
+    max-width: 500px;
+    /deep/ {
+        h1 {
+            font-weight: lighter;
+        }
+
+    }
+    p {
+        font-weight: lighter!important;
+        font-size: 0.8em!important;
+        line-height: 25px!important;
+        margin: 25px 0 0;
+        background: #3cb371;
+        color: #fff;
+        position: relative;
+        left: -24px;
+        width: 100%;
+        padding: 10px 24px;
+    }
+
+}
+paper-button {
+    padding: 0;
+    margin: 0 0 0 5px;
+    padding: 0 10px;
+    font-size: 14px;
+    border: solid 1px #ddd;
+    &[autofocus] {
+        background: #3cb371;
+        border: solid 1px #3cb371;
+        color: #fff;
+    }
+    /deep/ {
+        [relative] {
+
+            font-size: 14px!important;
+        }
+    }
+}

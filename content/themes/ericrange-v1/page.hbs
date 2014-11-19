@@ -4,8 +4,15 @@
     attributes by default, but you can also customise it to behave differently if you prefer. }}
 
 <nav class="main-nav clearfix">
-    <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
-    {{> "rss"}}
+    <paper-button class="back">
+        <a href="/">Home</a>
+    </paper-button>
+    <span id="stack-container">
+        <span id="stack" class="stack button">
+            <span class="octicon octicon-three-bars"></span>
+        </span>
+        {{> "menu"}}
+    </span>
 </nav>
 
 <main class="content" role="main">

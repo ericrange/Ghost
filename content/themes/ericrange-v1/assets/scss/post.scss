@@ -1,11 +1,39 @@
 .post {
+    max-width: 60%;
+    @media screen and (max-width: 800px) {
+        max-width: 100%;
+        padding: 0 20px;
+
+    }
+
     .post-content,
     .post-excerpt {
         font-weight: lighter;
-        font-size: 18px;
-        line-height: 32px;
         color: #333;
         letter-spacing: 0.5px;
+
+        line-height: 3.5vw;
+        font-size: 2vw;
+
+        @media screen and (max-width: 800px) {
+            font-size: 1.0em;
+            line-height: 1.7em;
+        }
+    }
+
+}
+.subscription {
+    background: #222;
+    padding: 50px 0;
+    .container {
+        max-width: 75%;
+        margin: 0 auto;
+        paper-input {
+            color: #fff;
+        }
+        .title {
+            color: #fff;
+        }
     }
 
 }
@@ -31,11 +59,27 @@
 
     }
     .post {
-        max-width: 800px;
         margin: 0 auto;
 
         h1 {
-            font-size: 52px;
+            font-size: 5vw;
+            @media screen and (max-width: 800px) {
+                font-size: 2em;
+            }
+
+        }
+        h2 {
+            font-size: 4vw;
+            @media screen and (max-width: 800px) {
+                font-size: 2em;
+            }
+
+        }
+        h3 {
+            font-size: 3vw;
+            @media screen and (max-width: 800px) {
+                font-size: 2em;
+            }
 
         }
         img {

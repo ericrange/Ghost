@@ -5,18 +5,19 @@
 
 <nav class="main-nav clearfix">
     <paper-button class="back">
-        <a href="/">
-            <span class="mega-octicon octicon-arrow-small-left"></span>
-            Home
-        </a>
+        <a href="/">Home</a>
     </paper-button>
-    {{> "rss"}}
+    <span id="stack-container">
+        <span id="stack" class="stack button">
+            <span class="octicon octicon-three-bars"></span>
+        </span>
+        {{> "menu"}}
+    </span>
 </nav>
 
 <main class="content" role="main">
 
     <article class="{{post_class}}" itemscope itemType="http://schema.org/BlogPosting">
-    {{! Everything inside the #post tags pulls data from the post }}
     {{#post}}
 
         <header class="post-header">
@@ -80,5 +81,13 @@
 
     {{/post}}
     </article>
+
+    <section class="subscription">
+        <div class="container">
+            <h4 class="title">Abonnieren</h4>
+            <paper-input type="email" id="subscribe-email-footer" label="E-Mail Adresse" error="Das ist keine E-Mail Adresse!"></paper-input>
+            <paper-button onclick="Subscribe.apply('subscribe-email-footer');" label="Abonnieren" autofocus></paper-button>
+        </div>
+    </section>
 
 </main>

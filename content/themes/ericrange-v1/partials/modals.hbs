@@ -1,5 +1,6 @@
 <paper-dialog backdrop="true" closeSelector=".close" heading="Blog abonnieren" id="subscribe-modal">
-    <paper-input type="email" id="subscribe-email" label="E-Mail Adresse" error="Das ist keine E-Mail Adresse!"></paper-input>
+    <p>If I write shit, you get it in your inbox a maximum of 1 time per week. If I don't then nothing happens.</p>
+    <paper-input type="email" id="subscribe-email-modal" label="E-Mail Adresse" error="Das ist keine E-Mail Adresse!"></paper-input>
     <paper-button class="close" label="Zurück" affirmative></paper-button>
-    <paper-button onclick="Subscribe.apply();" label="Abonnieren" affirmative autofocus></paper-button>
+    <paper-button onclick="Subscribe.apply('subscribe-email-modal');" label="Abonnieren" affirmative autofocus></paper-button>
 </paper-dialog>

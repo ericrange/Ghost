@@ -1,24 +1,22 @@
-var Modal, Subscribe;
-
-Modal = {
+this.Modal = {
   subscribe: function() {
-    document.querySelector("#subscribe-modal").toggle();
+    document.getElementById("subscribe-modal").toggle();
   }
 };
 
-Subscribe = {
-  apply: function(Email) {
-    var action, form, hiddenField, key, method, params;
-    if ($("#" + Email).val() === "") {
+this.Subscribe = {
+  apply: function(EmailId) {
+    var Email, action, form, hiddenField, key, params;
+    Email = document.getElementById(EmailId).value;
+    if (Email === "") {
       return null;
     }
     params = {
       b_dbbb567f463ec5fd082dcaa81_af54efd00e: ""
     };
-    method = "post";
-    action = "//eric-range.us9.list-manage.com/subscribe/post?u=dbbb567f463ec5fd082dcaa81&amp;id=af54efd00e&EMAIL=" + $("#" + Email).val();
+    action = "//eric-range.us9.list-manage.com/subscribe/post?u=dbbb567f463ec5fd082dcaa81&amp;id=af54efd00e&EMAIL=" + Email;
     form = document.createElement("form");
-    form.setAttribute("method", method);
+    form.setAttribute("method", "post");
     form.setAttribute("action", action);
     for (key in params) {
       if (params.hasOwnProperty(key)) {

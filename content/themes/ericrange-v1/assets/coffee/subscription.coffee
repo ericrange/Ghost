@@ -1,5 +1,4 @@
 @Subscribe = apply: (EmailId) ->
-  #Email = $("#" + Email).val()
   Email = document.getElementById(EmailId).value
   return null if Email is ""
   params = b_dbbb567f463ec5fd082dcaa81_af54efd00e: ""

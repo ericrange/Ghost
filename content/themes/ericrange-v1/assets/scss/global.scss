@@ -36,6 +36,10 @@ input[type="submit"] {
     font-size: 46px;
     margin-bottom: 0;
     padding-left: 60px;
+
+    @media screen and (max-width: 500px) {
+        font-size: 35px;
+    }
 }
 .page-description {
     font-size: 24px;
@@ -43,6 +47,9 @@ input[type="submit"] {
     letter-spacing: 0;
     padding-left: 60px;
 
+    @media screen and (max-width: 500px) {
+        font-size: 18px;
+    }
 }
 .overlay {
     height: 30%!important;
@@ -144,6 +151,12 @@ paper-input {
 
 }
 .main-nav {
+
+    @media screen and (max-width: 500px) {
+        padding: 10px;
+        margin-bottom: 0px;
+    }
+
     a {
         padding: 10px;
         span {
@@ -152,11 +165,20 @@ paper-input {
 
     }
     .back {
+        @media screen and (max-width: 500px) {
+            padding-left: 0px;
+        }
+
         float: left;
         font-size: 1.5rem;
         border: dotted 1px #999;
         a {
             color: #999;
+
+            @media screen and (max-width: 500px) {
+                padding-left: 0px;
+            }
+
             &::before {
                 content: "\e005";
                 font-family: icons;
@@ -176,10 +198,18 @@ paper-input {
     border-bottom: solid #3cb371 10px;
     text-align: left;
 
+    @media screen and (max-width: 500px) {
+        background: #222!important;
+        padding: 5% 0px;
+        margin-bottom: 30px;
+        .main-header-content {
+            background: #222!important;
+        }
+    }
+
     .main-header-content {
         background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0));
         padding: 25px 35px;
-
     }
     .custom-logo {
         position: absolute;

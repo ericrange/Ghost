@@ -91,7 +91,7 @@ module.exports = function (grunt) {
 					expand: true,
 					cwd: "content/themes/ericrange-v1/bower/", 
 					src: ["**/*.html"],
-					dest: "content/themes/ericrange-v1/assets/html/"
+					dest: "content/themes/ericrange-v1/bower/"
 				}]
 			}
 		},
@@ -130,6 +130,34 @@ module.exports = function (grunt) {
 						src: ['**/*.min.css.map'],
 						dest: 'content/themes/ericrange-v1/assets/',
 						ext: '.min.css.map.gz'
+					},
+					{
+						expand: true,
+						cwd: 'content/themes/ericrange-v1/assets/',
+						src: ['**/*.eot'],
+						dest: 'content/themes/ericrange-v1/assets/',
+						ext: '.eot.gz'
+					},
+					{
+						expand: true,
+						cwd: 'content/themes/ericrange-v1/assets/',
+						src: ['**/*.woff'],
+						dest: 'content/themes/ericrange-v1/assets/',
+						ext: '.woff.gz'
+					},
+					{
+						expand: true,
+						cwd: 'content/themes/ericrange-v1/assets/',
+						src: ['**/*.ttf'],
+						dest: 'content/themes/ericrange-v1/assets/',
+						ext: '.ttf.gz'
+					},
+					{
+						expand: true,
+						cwd: 'content/themes/ericrange-v1/assets/',
+						src: ['**/*.svg'],
+						dest: 'content/themes/ericrange-v1/assets/',
+						ext: '.svg.gz'
 					}
 				]
 			},
@@ -187,6 +215,17 @@ module.exports = function (grunt) {
 					"content/themes/ericrange-v1/assets/build.html": "content/themes/ericrange-v1/assets/polymer-build.html"
 				}
 			}
+		},
+
+		htmllint: {
+			your_target: {
+				options: {
+					
+				},
+				src: [
+					'content/themes/ericrange-v1/bower/**/*.html'
+				]
+			}
 		}
 
 	});
@@ -201,8 +240,10 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-contrib-htmlmin");
 	grunt.loadNpmTasks('grunt-vulcanize');
 	grunt.loadNpmTasks('grunt-contrib-compress');
+	grunt.loadNpmTasks('grunt-htmllint');
 
 	grunt.registerTask("default", ["watch"]);
+	grunt.registerTask("htmllint", ["htmllint"]);
 	grunt.registerTask("scss", ["sass"]);
 	grunt.registerTask("gzip", ["compress:main"]);
 	grunt.registerTask("gzippolymer", ["compress:polymer"]);

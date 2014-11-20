@@ -20,9 +20,9 @@
         <link rel="icon" type="image/png" href="{{asset "favicon.png"}}">
 
         {{! Styles'n'Scripts }}
-        <link rel="stylesheet" type="text/css" href="{{asset "css/prefixed-defaults.min.css"}}" />
-        <link rel="stylesheet" type="text/css" href="{{asset "css/prefixed-styles.min.css"}}" />
-        <link rel="stylesheet" type="text/css" href="{{asset "fonts/octicons/octicons.min.css"}}" />
+        <link rel="stylesheet" type="text/css" href="/assets/css/prefixed-defaults.min.css" />
+        <link rel="stylesheet" type="text/css" href="/assets/css/prefixed-styles.min.css" />
+        <link rel="stylesheet" type="text/css" href="/assets/fonts/octicons/octicons.min.css" />
 
         {{! Custom: ghost_head}}
         <link rel="canonical" href="{{@blog.url}}{{url}}">
@@ -39,7 +39,7 @@
         <meta property="og:url" content="{{@blog.url}}{{url}}" />
         <meta property="og:image" content="{{@blog.url}}{{asset "favicon.png"}}" />
 
-        <script type="text/javascript" src="{{asset "js/sync-scripts.min.js"}}"></script>
+        <script type="text/javascript" src="/assets/js/sync-scripts.min.js"></script>
         <link href="/bower/core-icon/core-icon.html" rel="import">
         <link href="/bower/core-icons/core-icons.html" rel="import">
         <link href="/bower/paper-button/paper-button.html" rel="import">
@@ -56,6 +56,6 @@
         {{! Ghost outputs important scripts and data with this tag }}
         {{! ghost_foot}}
         {{> "modals"}}
-        <script type="text/javascript" src="{{asset "js/async-scripts.min.js"}}"></script>
+        <script type="text/javascript" src="/assets/js/async-scripts.min.js"></script>
     </body>
 </html>

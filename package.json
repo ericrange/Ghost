@@ -91,6 +91,7 @@
     "grunt-ember-templates": "~0.5.0-alpha",
     "grunt-es6-module-transpiler": "~0.6.0",
     "grunt-express-server": "~0.4.19",
+    "grunt-htmllint": "^0.2.2",
     "grunt-jscs": "~0.8.1",
     "grunt-local-googlefont": "^0.1.4",
     "grunt-mocha-cli": "~1.11.0",

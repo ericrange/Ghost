@@ -97,6 +97,23 @@ paper-input {
         }
 
     }
+
+    .menu-contact {
+        @media screen and (max-width: 500px) {
+            background: rgba(0, 0, 0, 0);
+            color: #FFF;
+            padding: 0px;
+        }
+    }
+
+    .menu-subscribe {
+        @media screen and (max-width: 500px) {
+            background: rgba(0, 0, 0, 0);
+            color: #3CB371;
+            padding: 0px 15px 0px 0px;
+        }
+    }
+
     .back {
         @media screen and (max-width: 500px) {
             padding-left: 0;

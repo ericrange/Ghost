@@ -7,12 +7,7 @@
     <paper-button class="back">
         <a href="/">Home</a>
     </paper-button>
-    <span id="stack-container">
-        <span id="stack" class="stack button">
-            <span class="octicon octicon-three-bars"></span>
-        </span>
-        {{> "menu"}}
-    </span>
+    {{> "menu"}}
 </nav>
 
 <main class="content" role="main">
@@ -84,9 +79,10 @@
 
     <section class="subscription">
         <div class="container">
-            <h4 class="title">Abonnieren</h4>
+            <h4 class="title"><span class="mega-octicon octicon-rss"></span>Abonnieren</h4>
+            <p>If I write shit, you get it in your inbox a maximum of 1 time per week. If I don't then nothing happens.</p>
             <paper-input type="email" id="subscribe-email-footer" label="E-Mail Adresse" error="Das ist keine E-Mail Adresse!"></paper-input>
-            <paper-button onclick="Subscribe.apply('subscribe-email-footer');" label="Abonnieren" autofocus></paper-button>
+            <paper-button onclick="Subscribe.apply('subscribe-email-footer');" autofocus>Abonnieren</paper-button>
         </div>
     </section>
 

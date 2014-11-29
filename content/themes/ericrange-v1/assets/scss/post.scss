@@ -7,15 +7,15 @@
         margin-right: auto;
         margin-bottom: 20px;
         padding-bottom: 20px;
-    }
 
+    }
     .post-content,
     .post-excerpt {
         font-weight: lighter;
         color: #333;
         letter-spacing: 0.5px;
 
-        line-height: 3.5vw;
+        line-height: 3.4vw;
         font-size: 2vw;
 
         @media screen and (max-width: 800px) {
@@ -29,8 +29,27 @@
     background: #222;
     padding: 50px 0;
     .container {
-        max-width: 75%;
+        max-width: 60%;
         margin: 0 auto;
+
+        @media screen and (max-width: 800px) {
+            padding: 0 20px 20px;
+            width: 80%;
+            max-width: 100%;
+        }
+
+        @media screen and (max-width: 500px) {
+            padding: 0 20px 20px;
+            max-width: 100%;
+        }
+
+        .octicon-rss {
+            margin-right: 10px;
+        }
+        p {
+            color: #ccc;
+            margin-bottom: 0;
+        }
         paper-input {
             color: #fff;
         }
@@ -124,8 +143,10 @@
 
         }
         pre {
+            line-height: 1.4em;
             * {
                 font-family: monospace;
+                font-size: 0.8em;
             }
             & + * {
                 margin-top: 1.65em;

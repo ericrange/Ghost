@@ -5,12 +5,7 @@
 <header role="banner" class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
     <div class="main-nav overlay clearfix">
         {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-        <span id="stack-container">
-            <span id="stack" class="stack button">
-                <span class="octicon octicon-three-bars"></span>
-            </span>
-            {{> "menu"}}
-        </span>
+        {{> "menu"}}
     </div>
     <div class="vertical">
         <div class="main-header-content inner">

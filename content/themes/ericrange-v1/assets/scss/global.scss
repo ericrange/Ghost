@@ -7,7 +7,9 @@
 
 * {
     font-family: "Open Sans", Helvetica, Arial;
-
+}
+body {
+    overflow-x: hidden;
 }
 h1,
 h2,
@@ -16,10 +18,27 @@ h3 {
     letter-spacing: -1px;
 
 }
+.menu {
+    z-index: 2;
+    position: relative;
+    float: right;
+    li {
+        display: inline-block;
+        .menu-item-button {
+            float: left;
+            border: dotted 1px #999;
+            a {
+
+            }
+        }
+    }
+
+}
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    height: 0px;
     li {
         padding: 0;
         margin: 0;
@@ -40,6 +59,7 @@ input[type="submit"] {
     @media screen and (max-width: 500px) {
         font-size: 35px;
     }
+
 }
 .page-description {
     font-size: 24px;
@@ -50,100 +70,13 @@ input[type="submit"] {
     @media screen and (max-width: 500px) {
         font-size: 18px;
     }
+
 }
 .overlay {
     height: 30%!important;
-
 }
-$items: 4;
 .main-nav {
-    #stack-container {
-        display: block;
-        float: right;
-        overflow: hidden;
-        height: 40px;
-        width: 40px;
-        &:hover {
-            width: (40 * $items) + (5 * ($items - 1)) + px;
-            .menu {
-                .button {
-                    &::before,
-                    &::after {
-                        z-index: 0;
-                    }
-                    &:hover {
-                        &::before,
-                        &::after {
-                            transform: translateX(-50%);
-                            left: 50%;
-                            position: absolute;
-                        }
-                        &::before {
-                            content: "";
-                            width: 0;
-                            height: 0;
-                            border: solid 5px rgba(0, 0, 0, 0);
-                            border-bottom: solid 5px #222;
-                            top: 37px;
-                        }
-                        &::after {
-                            content: attr(tooltip);
-                            font-size: 12px;
-                            background: #222;
-                            color: #fff;
-                            padding: 0 6px;
-                            top: 47px;
-                            line-height: 25px;
-                            border-radius: 5px;
-                        }
-                    }
 
-                }
-                @for $i from 1 through $items {
-                    .button:nth-child(#{$i}) {
-                        right: 40 + ($i * 40) + ($i * 5) + px;
-                    }
-                }
-            }
-        }
-
-    }
-    .button {
-        cursor: pointer;
-        transition: right 0.5s 0.2s;
-        border-radius: 50%;
-        background: mediumseagreen;
-        height: 40px;
-        width: 40px;
-        text-align: center;
-        line-height: 35px;
-        position: absolute;
-        right: 40px;
-        z-index: 0;
-        &.stack {
-            z-index: 2;
-        }
-        .octicon {
-            color: white;
-            font-size: 18px;
-        }
-        a {
-            font-size: 0;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            left: 0;
-            padding: 0;
-            top: 0;
-            z-index: 0;
-            &:hover {
-                background: none;
-                .octicon {
-                    color: #fff;
-                }
-            }
-        }
-    }
 
 }
 paper-input {
@@ -153,12 +86,12 @@ paper-input {
 .main-nav {
 
     @media screen and (max-width: 500px) {
-        padding: 10px;
-        margin-bottom: 0px;
+        padding: 10px 5px;
+        margin-bottom: 0;
     }
-
     a {
-        padding: 10px;
+        padding: 3px 3px!important;
+        color: inherit!important;
         span {
             vertical-align: middle;
         }
@@ -166,9 +99,8 @@ paper-input {
     }
     .back {
         @media screen and (max-width: 500px) {
-            padding-left: 0px;
+            padding-left: 0;
         }
-
         float: left;
         font-size: 1.5rem;
         border: dotted 1px #999;
@@ -176,9 +108,9 @@ paper-input {
             color: #999;
 
             @media screen and (max-width: 500px) {
-                padding-left: 0px;
-            }
+                padding-left: 0;
 
+            }
             &::before {
                 content: "\e005";
                 font-family: icons;
@@ -186,8 +118,8 @@ paper-input {
                 vertical-align: middle;
                 margin-right: 3px;
             }
-        }
 
+        }
         @media screen and (max-width: 500px) {
             border: none;
         }
@@ -200,13 +132,13 @@ paper-input {
 
     @media screen and (max-width: 500px) {
         background: #222!important;
-        padding: 5% 0px;
+        padding: 5% 0;
         margin-bottom: 30px;
         .main-header-content {
             background: #222!important;
         }
-    }
 
+    }
     .main-header-content {
         background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0));
         padding: 25px 35px;

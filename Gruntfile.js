@@ -31,7 +31,7 @@ module.exports = function (grunt) {
 				},
 				files: {
 					"content/themes/ericrange-v1/assets/js/sync-scripts.min.js": [
-						"content/themes/ericrange-v1/bower/platform/platform.js"
+						"content/themes/ericrange-v1/bower/webcomponentsjs/webcomponents.js"
 					],
 					"content/themes/ericrange-v1/assets/js/async-scripts.min.js": [
 						"content/themes/ericrange-v1/bower/jquery/dist/jquery.min.js",
@@ -212,7 +212,7 @@ module.exports = function (grunt) {
 					
 				},
 				files: {
-					"content/themes/ericrange-v1/assets/build.html": "content/themes/ericrange-v1/assets/polymer-build.html"
+					"content/themes/ericrange-v1/polymer-build.html": "content/themes/ericrange-v1/test.html"
 				}
 			}
 		},

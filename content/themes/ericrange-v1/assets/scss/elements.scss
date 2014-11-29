@@ -1,5 +1,11 @@
-paper-dialog {
+core-overlay {
+    background: #FFF;
+    overflow: hidden!important;
     max-width: 500px;
+    padding: 24px 24px 20px 24px;
+    left: 50%;
+    transform: translateX(-50%)!important;
+    width: 100%;
     /deep/ {
         h1 {
             font-weight: lighter;
@@ -23,18 +29,42 @@ paper-dialog {
 paper-button {
     padding: 0;
     margin: 0 0 0 5px;
-    padding: 0 10px;
-    font-size: 14px;
+    padding: 0px 10px;
+    font-size: 1.5rem!important;
     border: solid 1px #ddd;
+    background: #fff;
+
+    @media screen and (max-width: 500px) {
+        border: none!important;
+        i {
+            display: none!important;
+        }
+    }
+
+    i {
+        padding:0px 5px 0px 0px;
+    }
+    a {
+        color: #222;
+        text-transform: uppercase;
+        display: inline-block;
+        &:hover {
+            background: rgba(0, 0, 0, 0)!important;
+        }
+    }
     &[autofocus] {
         background: #3cb371;
         border: solid 1px #3cb371;
         color: #fff;
+        a {
+            color: #fff;
+        }
+
     }
     /deep/ {
         [relative] {
-
             font-size: 14px!important;
+            padding: 0px;
         }
     }
 }

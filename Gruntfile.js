@@ -16,18 +16,19 @@ module.exports = function (grunt) {
 		watch: {
 			css: {
 				files: "content/themes/ericrange-v1/assets/scss/**/*.scss",
-				tasks: ["sass", "autoprefixer", "cssmin", "compress:main"]
+				tasks: ["sass", "autoprefixer", "cssmin:dist", "compress:main"]
 			},
 			coffee: {
 				files: "content/themes/ericrange-v1/assets/coffee/**/*.coffee",
-				tasks: ["coffee", "jshint", "uglify", "compress:main"]
+				tasks: ["coffee", "jshint", "uglify:dist", "compress:main"]
 			}
 		},
 
 		uglify: {
 			dist: {
 				options: {
-					sourceMap: true
+					sourceMap: true,
+					compress: true
 				},
 				files: {
 					"content/themes/ericrange-v1/assets/js/sync-scripts.min.js": [
@@ -39,6 +40,18 @@ module.exports = function (grunt) {
 						"content/themes/ericrange-v1/assets/js/vendor/*.js"
 					],
 				}
+			},
+			polymer: {
+				options: {
+					sourceMap: false,
+					compress: true
+				},
+				files: [{
+					expand: true,
+					cwd: "content/themes/ericrange-v1/bower/",
+					src: "**/*.js",
+					dest: "content/themes/ericrange-v1/bower/"
+				}]
 			}
 		},
 
@@ -72,6 +85,14 @@ module.exports = function (grunt) {
 					"content/themes/ericrange-v1/assets/css/prefixed-defaults.min.css": ["content/themes/ericrange-v1/assets/css/prefixed-defaults.css"],
 					"content/themes/ericrange-v1/assets/css/prefixed-styles.min.css": ["content/themes/ericrange-v1/assets/css/prefixed-styles.min.css"]
 				}
+			},
+			polymer: {
+				files: [{
+					expand: true,
+					cwd: "content/themes/ericrange-v1/bower/",
+					src: "**/*.css",
+					dest: "content/themes/ericrange-v1/bower/"
+				}]
 			}
 		},
 
@@ -90,7 +111,7 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					cwd: "content/themes/ericrange-v1/bower/", 
-					src: ["**/*.html"],
+					src: "**/*.html",
 					dest: "content/themes/ericrange-v1/bower/"
 				}]
 			}
@@ -177,6 +198,13 @@ module.exports = function (grunt) {
 					{
 						expand: true,
 						cwd: 'content/themes/ericrange-v1/bower/',
+						src: ['**/*.min.js'],
+						dest: 'content/themes/ericrange-v1/bower/',
+						ext: '.min.js.gz'
+					},
+					{
+						expand: true,
+						cwd: 'content/themes/ericrange-v1/bower/',
 						src: ['**/*.css'],
 						dest: 'content/themes/ericrange-v1/bower/',
 						ext: '.css.gz'
@@ -226,6 +254,20 @@ module.exports = function (grunt) {
 					'content/themes/ericrange-v1/bower/**/*.html'
 				]
 			}
+		},
+
+		imagemin: {
+			dynamic: {     
+				options: {
+					optimizationLevel: 7
+				},                    // Another target
+				files: [{
+					expand: true,                  // Enable dynamic expansion
+					cwd: 'content/',                   // Src matches are relative to this path
+					src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+					dest: 'content/'                  // Destination path prefix
+				}]
+			}
 		}
 
 	});
@@ -241,12 +283,14 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-vulcanize');
 	grunt.loadNpmTasks('grunt-contrib-compress');
 	grunt.loadNpmTasks('grunt-htmllint');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
 
 	grunt.registerTask("default", ["watch"]);
+	grunt.registerTask("images", ["imagemin"]);
 	grunt.registerTask("htmllint", ["htmllint"]);
 	grunt.registerTask("scss", ["sass"]);
 	grunt.registerTask("gzip", ["compress:main"]);
-	grunt.registerTask("gzippolymer", ["compress:polymer"]);
+	grunt.registerTask("polymer", ["cssmin:polymer", "uglify:polymer", "compress:polymer"]);
 	grunt.registerTask("html", ["htmlmin"]);
 	grunt.registerTask("poly", ["vulcanize"]);
 	grunt.registerTask("js", ["coffee", "jshint", "uglify"]);

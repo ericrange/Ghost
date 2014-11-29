@@ -10,3 +10,4 @@ npm install grunt-contrib-jshint --save-dev
 npm install grunt-vulcanize --save-dev
 npm install grunt-contrib-compress --save-dev
 npm install grunt-htmllint --save-dev
+npm install grunt-contrib-imagemin --save-dev

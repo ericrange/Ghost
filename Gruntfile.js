@@ -16,7 +16,7 @@ module.exports = function (grunt) {
 		watch: {
 			css: {
 				files: "content/themes/ericrange-v1/assets/scss/**/*.scss",
-				tasks: ["sass", "autoprefixer", "cssmin:dist", "compress:main"]
+				tasks: ["sass", "autoprefixer:dist", "cssmin:dist", "compress:main"]
 			},
 			coffee: {
 				files: "content/themes/ericrange-v1/assets/coffee/**/*.coffee",

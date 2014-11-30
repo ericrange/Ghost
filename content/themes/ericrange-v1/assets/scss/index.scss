@@ -1,5 +1,10 @@
 .home-template {
     .post {
+        .post-title {
+            a {
+                font-weight: bold;
+            }
+        }
         .post-meta {
             font-size: 16px;
             color: #3cb371;

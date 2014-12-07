@@ -15,7 +15,8 @@
         {{! Fonts }}
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
 
-        <link rel="author" href="https://plus.google.com/+EricRange/">
+        <link rel="author" href="https://plus.google.com/+EricRange">
+        <link rel="publisher" href="https://plus.google.com/+EricRange">
         <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
         <link rel="icon" type="image/png" href="{{asset "favicon.png"}}">
 
@@ -43,7 +44,7 @@
         {{> "imports"}}
 
     </head>
-    <body class="{{body_class}}">
+    <body class="{{body_class}}" itemscope itemtype="http://schema.org/WebPage">
 
         {{! Everything else gets inserted here }}
         {{{body}}}

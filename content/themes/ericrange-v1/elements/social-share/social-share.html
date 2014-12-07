@@ -1,0 +1,59 @@
+<link rel="import" href="/bower/core-icons/social-icons.html">
+
+<polymer-element name="social-share" attributes="headline shareUrl shareTitle shareSize">
+
+    <template>
+
+        <style>
+            .facebook core-icon,
+            .twitter core-icon,
+            .google core-icon {
+                width:  {{shareSize}}px;
+                height: {{shareSize}}px;
+            }
+
+            .facebook { color: #3b5998; }
+            .twitter  { color: #326ada; }
+            .google   { color: #D34836; }
+
+            a {
+                text-decoration: none;
+                width: 30px;
+                display: inline-block;
+            }
+
+            h4 {
+                font-size: 1.8rem;
+                margin: 0;
+            }
+        </style>
+
+        <h4>{{headline}}</h4>
+        <a on-click="{{openShareWindow}}"
+           href="https://www.facebook.com/sharer/sharer.php?u={{shareUrl}}"
+           class="facebook">
+            <core-icon icon="social:post-facebook"></core-icon>
+        </a>
+        <a on-click="{{openShareWindow}}"
+           href="https://twitter.com/share?text={{shareTitle}}&amp;url={{shareUrl}}"
+           class="twitter">
+            <core-icon icon="social:post-twitter"></core-icon>
+        </a>
+
+        <a on-click="{{openShareWindow}}"
+           href="https://plus.google.com/share?url={{shareUrl}}"
+           class="google">
+            <core-icon icon="social:post-gplus"></core-icon>
+        </a>
+
+    </template>
+
+    <script>
+        Polymer("social-share", {
+            openShareWindow: function(event, detail, sender) {
+                event.preventDefault();
+                window.open(sender.href, this.shareTitle, 'width=640,height=320');
+            }
+        });
+    </script>
+</polymer-element>

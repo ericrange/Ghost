@@ -12,10 +12,10 @@
     .post-content,
     .post-excerpt {
         font-weight: lighter;
-        color: #333;
+        color: #222;
         letter-spacing: 0.5px;
 
-        line-height: 3.4vw;
+        line-height: 3.2vw;
         font-size: 2vw;
 
         @media screen and (max-width: 800px) {
@@ -28,6 +28,7 @@
 .subscription {
     background: #222;
     padding: 50px 0;
+    font-weight: lighter;
     .container {
         max-width: 60%;
         margin: 0 auto;
@@ -49,9 +50,11 @@
         p {
             color: #ccc;
             margin-bottom: 0;
+            font-size: 0.9em;
         }
         paper-input {
             color: #fff;
+            font-size: 0.9em;
         }
         .title {
             color: #fff;

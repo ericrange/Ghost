@@ -146,10 +146,16 @@
 
         }
         pre {
-            line-height: 1.4em;
+            line-height: 1.2em;
+            background: #F1F1F1;
+            border-radius: 0px;
+            border: none;
+            padding: 15px 23px;
             * {
                 font-family: monospace;
-                font-size: 0.8em;
+                font-size: 14px;
+                word-break: break-all;
+                white-space: pre;
             }
             & + * {
                 margin-top: 1.65em;

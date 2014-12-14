@@ -827,18 +827,6 @@ body:not(.post-template) .post-title {
     width: 140px;
 }
 
-.post-footer .share a {
-    font-size: 1.8rem;
-    display: inline-block;
-    margin: 1rem 1.6rem 1.6rem 0;
-    color: #BBC7CC;
-    text-decoration: none;
-}
-
-.post-footer .share a:hover {
-    color: #50585D;
-}
-
 /* The subscribe icon on the footer */
 .subscribe {
     width: 28px;

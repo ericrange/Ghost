@@ -1,0 +1,15 @@
+@mixin responsiveText($minFontSize, $minLineHeight,
+                      $responsiveRatioFontSize, $responsiveRatioLineHeight,
+                      $maxFontSize, $maxLineHeight,
+                      $minBreakpoint, $maxBreakpoint) {
+    line-height: $responsiveRatioLineHeight;
+    font-size:   $responsiveRatioFontSize;
+    @media screen and (max-width: $minBreakpoint) {
+        font-size:   $minFontSize;
+        line-height: $minLineHeight;
+    }
+    @media screen and (min-width: $maxBreakpoint) {
+        font-size:   $maxFontSize;
+        line-height: $maxLineHeight;
+    }
+}

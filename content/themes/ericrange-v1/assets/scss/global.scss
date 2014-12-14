@@ -1,6 +1,7 @@
 @import "vendor/normalize.scss";
 @import "vendor/prism.scss";
 
+@import "mixins.scss";
 @import "index.scss";
 @import "post.scss";
 @import "elements.scss";
@@ -39,7 +40,7 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    height: 0px;
+    height: 0;
     li {
         padding: 0;
         margin: 0;
@@ -98,23 +99,22 @@ paper-input {
         }
 
     }
-
     .menu-contact {
         @media screen and (max-width: 500px) {
             background: rgba(0, 0, 0, 0);
-            color: #FFF;
-            padding: 0px;
+            color: #fff;
+            padding: 0;
         }
-    }
 
+    }
     .menu-subscribe {
         @media screen and (max-width: 500px) {
             background: rgba(0, 0, 0, 0);
-            color: #3CB371;
-            padding: 0px 15px 0px 0px;
+            color: #3cb371;
+            padding: 0 15px 0 0;
         }
-    }
 
+    }
     .back {
         @media screen and (max-width: 500px) {
             padding-left: 0;
@@ -196,4 +196,5 @@ paper-input {
     a[href*="/tag/"] {
         border-bottom: dotted #3cb371 1px;
     }
+
 }

@@ -4,7 +4,7 @@ var path = require('path'),
 config = {
     development: {
         url: 'http://eric-range.de',
-
+        tagsUI: true,
         //  mail: {
         //      transport: 'SMTP',
         //      options: {
@@ -34,6 +34,7 @@ config = {
     
     production: {
         url: 'https://eric-range.de',
+        tagsUI: true,
         mail: {},
         database: {
             client: 'mysql',

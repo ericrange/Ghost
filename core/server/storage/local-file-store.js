@@ -19,9 +19,9 @@ util.inherits(LocalFileStore, baseStore);
 // Saves the image to storage (the file system)
 // - image is the express image object
 // - returns a promise which ultimately returns the full url to the uploaded image
-LocalFileStore.prototype.save = function (image, targetDir) {
-    targetDir = targetDir || this.getTargetDir(config.paths.imagesPath);
-    var targetFilename;
+LocalFileStore.prototype.save = function (image) {
+    var targetDir = this.getTargetDir(config.paths.imagesPath),
+        targetFilename;
 
     return this.getUniqueFileName(this, image, targetDir).then(function (filename) {
         targetFilename = filename;

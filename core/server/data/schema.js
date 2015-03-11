@@ -198,15 +198,9 @@ function isUser(jsonData) {
         jsonData.hasOwnProperty('status') && jsonData.hasOwnProperty('location');
 }
 
-function isNav(jsonData) {
-    return jsonData.hasOwnProperty('label') && jsonData.hasOwnProperty('url') &&
-        jsonData.hasOwnProperty('slug') && jsonData.hasOwnProperty('current');
-}
-
 module.exports.tables = db;
 module.exports.checks = {
     isPost: isPost,
     isTag: isTag,
-    isUser: isUser,
-    isNav: isNav
+    isUser: isUser
 };

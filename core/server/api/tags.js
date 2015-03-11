@@ -8,16 +8,7 @@ var Promise      = require('bluebird'),
     utils        = require('./utils'),
 
     docName      = 'tags',
-    allowedIncludes = ['post_count'],
     tags;
-
-// ## Helpers
-function prepareInclude(include) {
-    include = include || '';
-    include = _.intersection(include.split(','), allowedIncludes);
-
-    return include;
-}
 
 /**
  * ## Tags API Methods
@@ -31,13 +22,7 @@ tags = {
      * @returns {Promise(Tags)} Tags Collection
      */
     browse: function browse(options) {
-        options = options || {};
-
         return canThis(options.context).browse.tag().then(function () {
-            if (options.include) {
-                options.include = prepareInclude(options.include);
-            }
-
             return dataProvider.Tag.findPage(options);
         }, function () {
             return Promise.reject(new errors.NoPermissionError('You do not have permission to browse tags.'));
@@ -50,16 +35,9 @@ tags = {
      * @return {Promise(Tag)} Tag
      */
     read: function read(options) {
-        options = options || {};
-
         var attrs = ['id', 'slug'],
-            data = _.pick(options, attrs);
-
+        data = _.pick(options, attrs);
         return canThis(options.context).read.tag().then(function () {
-            if (options.include) {
-                options.include = prepareInclude(options.include);
-            }
-
             return dataProvider.Tag.findOne(data, options).then(function (result) {
                 if (result) {
                     return {tags: [result.toJSON()]};
@@ -81,10 +59,6 @@ tags = {
         options = options || {};
 
         return canThis(options.context).add.tag(object).then(function () {
-            if (options.include) {
-                options.include = prepareInclude(options.include);
-            }
-
             return utils.checkObject(object, docName).then(function (checkedTagData) {
                 return dataProvider.Tag.add(checkedTagData.tags[0], options);
             }).then(function (result) {
@@ -106,14 +80,8 @@ tags = {
      * @return {Promise(Tag)} Edited Tag
      */
     edit: function edit(object, options) {
-        options = options || {};
-
         return canThis(options.context).edit.tag(options.id).then(function () {
-            if (options.include) {
-                options.include = prepareInclude(options.include);
-            }
-
-            return utils.checkObject(object, docName, options.id).then(function (checkedTagData) {
+            return utils.checkObject(object, docName).then(function (checkedTagData) {
                 return dataProvider.Tag.edit(checkedTagData.tags[0], options);
             }).then(function (result) {
                 if (result) {
@@ -137,8 +105,6 @@ tags = {
      * @return {Promise(Tag)} Deleted Tag
      */
     destroy: function destroy(options) {
-        options = options || {};
-
         return canThis(options.context).destroy.tag(options.id).then(function () {
             return tags.read(options).then(function (result) {
                 return dataProvider.Tag.destroy(options).then(function () {

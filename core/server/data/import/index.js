@@ -3,14 +3,13 @@ var Promise         = require('bluebird'),
     validation      = require('../validation'),
     errors          = require('../../errors'),
     uuid            = require('node-uuid'),
-    importer        = require('./data-importer'),
+    validator       = require('validator'),
     tables          = require('../schema').tables,
     validate,
     handleErrors,
     checkDuplicateAttributes,
     sanitize,
-    cleanError,
-    doImport;
+    cleanError;
 
 cleanError = function cleanError(error) {
     var temp,
@@ -90,14 +89,14 @@ sanitize = function sanitize(data) {
         });
 
     _.each(tableNames, function (tableName) {
-        // Sanitize the table data for duplicates and valid uuid and created_at values
+        // Sanitize the table data for duplicates and valid uuid values
         var sanitizedTableData = _.transform(data.data[tableName], function (memo, importValues) {
             var uuidMissing = (!importValues.uuid && tables[tableName].uuid) ? true : false,
-                uuidMalformed = (importValues.uuid && !validation.validator.isUUID(importValues.uuid)) ? true : false,
+                uuidMalformed = (importValues.uuid && !validator.isUUID(importValues.uuid)) ? true : false,
                 isDuplicate,
                 problemTag;
 
-            // Check for correct UUID and fix if necessary
+            // Check for correct UUID and fix if neccessary
             if (uuidMissing || uuidMalformed) {
                 importValues.uuid = uuid.v4();
             }
@@ -185,12 +184,25 @@ validate = function validate(data) {
     });
 };
 
-doImport = function (data) {
-    var sanitizeResults = sanitize(data);
+module.exports = function (version, data) {
+    var importer,
+        sanitizeResults;
+
+    sanitizeResults = sanitize(data);
 
     data = sanitizeResults.data;
 
     return validate(data).then(function () {
+        try {
+            importer = require('./' + version);
+        } catch (ignore) {
+            // Zero effs given
+        }
+
+        if (!importer) {
+            return Promise.reject('No importer found');
+        }
+
         return importer.importData(data);
     }).then(function () {
         return sanitizeResults;
@@ -198,5 +210,3 @@ doImport = function (data) {
         return handleErrors(result);
     });
 };
-
-module.exports.doImport = doImport;

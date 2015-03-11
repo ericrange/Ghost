@@ -3,15 +3,37 @@ var Promise = require('bluebird'),
     models  = require('../../models'),
     utils   = require('./utils'),
 
-    DataImporter;
+    Importer000;
 
-DataImporter = function () {};
+Importer000 = function () {
+    _.bindAll(this, 'doImport');
 
-DataImporter.prototype.importData = function (data) {
-    return this.doImport(data);
+    this.version = '000';
+
+    this.importFrom = {
+        '000': this.doImport,
+        '001': this.doImport,
+        '002': this.doImport,
+        '003': this.doImport
+    };
 };
 
-DataImporter.prototype.loadUsers = function () {
+Importer000.prototype.importData = function (data) {
+    return this.canImport(data)
+        .then(function (importerFunc) {
+            return importerFunc(data);
+        });
+};
+
+Importer000.prototype.canImport = function (data) {
+    if (data.meta && data.meta.version && this.importFrom[data.meta.version]) {
+        return Promise.resolve(this.importFrom[data.meta.version]);
+    }
+
+    return Promise.reject('Unsupported version of data: ' + data.meta.version);
+};
+
+Importer000.prototype.loadUsers = function () {
     var users = {all: {}};
 
     return models.User.findAll({include: ['roles']}).then(function (_users) {
@@ -30,7 +52,11 @@ DataImporter.prototype.loadUsers = function () {
     });
 };
 
-DataImporter.prototype.doUserImport = function (t, tableData, users, errors) {
+// Importer000.prototype.importerFunction = function (t) {
+//
+// };
+
+Importer000.prototype.doUserImport = function (t, tableData, users, errors) {
     var userOps = [],
         imported = [];
 
@@ -63,7 +89,7 @@ DataImporter.prototype.doUserImport = function (t, tableData, users, errors) {
     return Promise.resolve({});
 };
 
-DataImporter.prototype.doImport = function (data) {
+Importer000.prototype.doImport = function (data) {
     var self = this,
         tableData = data.data,
         imported = {},
@@ -145,8 +171,8 @@ DataImporter.prototype.doImport = function (data) {
 };
 
 module.exports = {
-    DataImporter: DataImporter,
+    Importer000: Importer000,
     importData: function (data) {
-        return new DataImporter().importData(data);
+        return new Importer000().importData(data);
     }
 };

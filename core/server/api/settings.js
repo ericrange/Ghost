@@ -40,8 +40,7 @@ updateConfigTheme = function () {
             title: (settingsCache.title && settingsCache.title.value) || '',
             description: (settingsCache.description && settingsCache.description.value) || '',
             logo: (settingsCache.logo && settingsCache.logo.value) || '',
-            cover: (settingsCache.cover && settingsCache.cover.value) || '',
-            navigation: (settingsCache.navigation && JSON.parse(settingsCache.navigation.value)) || []
+            cover: (settingsCache.cover && settingsCache.cover.value) || ''
         }
     });
 };

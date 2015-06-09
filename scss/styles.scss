@@ -1,0 +1,101 @@
+@import "normalize.scss";
+$Color: #2fb03f;
+* {
+    font-family: "Fira Sans", Arial;
+    box-sizing: border-box;
+}
+body {
+    background-color: #eee;
+    border-top: solid 10px $Color;
+    padding-top: 50px;
+}
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.left {
+    float: left;
+    width: 250px;
+    .about-me {
+        text-align: center;
+        .job {
+            color: $Color;
+        }
+        .name {
+            font-weight: 300;
+            margin: 15px 0 0;
+        }
+        .image {
+            border-radius: 50%;
+            width: 100px;
+        }
+    }
+    .skills {
+        .skill-list {
+            .skill {
+                background-color: #eee;
+                padding: 7px 7px 3px;
+                font-size: 12px;
+                float: left;
+                margin-right: 3px;
+                border-radius: 5px;
+                line-height: 17px;
+            }
+        }
+    }
+    .widget {
+        background-color: #fff;
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+}
+.right {
+    width: 735px;
+    margin-left: 265px;
+    background-color: #fff;
+    .vita-list {
+        border-left: solid 1px #ddd;
+        margin: 0 30px;
+        padding-left: 30px;
+        .entry {
+            margin-bottom: 15px;
+            &::before {
+                content: "";
+                position: relative;
+                left: -35px;
+                width: 7px;
+                height: 7px;
+                border: solid 1px $Color;
+                display: block;
+                border-radius: 50%;
+                float: left;
+                background-color: #fff;
+                margin-right: -9px;
+            }
+        }
+        .period {
+            color: #999;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+        .company {
+            color: $Color;
+            font-size: 16px;
+        }
+        .job {
+            font-size: 16px;
+        }
+    }
+}
+.clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

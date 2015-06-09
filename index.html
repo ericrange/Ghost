@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<div class="left">
+    <div class="widget about-me">
+        <img class="image" src="/me.jpg" alt="Me">
+        <h1 class="name">Eric Range</h1>
+        <div class="job">Fullstack Developer</div>
+        <div class="location">Jena, Germany</div>
+    </div>
+
+    <div class="widget skills">
+        <h3 class="widget-title">Skills</h3>
+        <ul class="skill-list clearfix">
+            {% for item in site.skills %}
+            <li class="skill">{{ item }}</li>{% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="right">
+
+    <h2>Vita</h2>
+    <ul class="vita-list">
+        {% for item in site.vita %}
+        <li class="entry">
+            <div class="period">{{ item.period }}</div>
+            <div class="company">{{ item.company }}</div>
+            <div class="job">{{ item.job }}</div>
+        </li>{% endfor %}
+    </ul>
+
+</div>

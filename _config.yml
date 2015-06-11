@@ -6,7 +6,7 @@ description: > # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "https://eric-range.de" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
 
@@ -14,7 +14,12 @@ github_username:  jekyll
 markdown: kramdown
 skills:
   - Nginx
-  - ECMAScript 6
+  - Apache
+  - HTML5
+  - ECMAScript6
+  - MongoDB
+  - NodeJS
+  - Web Engineering
   - SharePoint
 vita:
   - company: Jenoptik AG
@@ -23,3 +28,13 @@ vita:
   - company: Evonik Industries AG
     period: October 2010 - September 2013
     job: Dualer Student
+
+education:
+  - name: Friedrich-Schiller-Universität
+    period: September 2014 - Present
+    location: Jena, Germany
+    studies: Business Informatics
+  - name: Duale Hochschule Baden-Württemberg
+    period: October 2010 - September 2013
+    location: Mannheim, Germany
+    studies: Business Informatics

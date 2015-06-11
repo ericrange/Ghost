@@ -10,7 +10,20 @@ layout: default
         <div class="location">Jena, Germany</div>
     </div>
 
-    <div class="widget skills">
+    <div class="widget connect shadow">
+
+        <div class="contact">
+            <h3 class="widget-title">Contact</h3>
+            <div class="email"></div>
+        </div>
+
+        <div class="social">
+            <h3 class="widget-title">Social</h3>
+        </div>
+
+    </div>
+
+    <div class="widget skills shadow">
         <h3 class="widget-title">Skills</h3>
         <ul class="skill-list clearfix">
             {% for item in site.skills %}
@@ -19,15 +32,27 @@ layout: default
     </div>
 </div>
 
-<div class="right">
+<div class="right shadow">
 
-    <h2>Vita</h2>
+    <h2>Background</h2>
+    <h3>Experience</h3>
     <ul class="vita-list">
         {% for item in site.vita %}
         <li class="entry">
             <div class="period">{{ item.period }}</div>
             <div class="company">{{ item.company }}</div>
             <div class="job">{{ item.job }}</div>
+        </li>{% endfor %}
+    </ul>
+
+    <h3>Education</h3>
+    <ul class="vita-list">
+        {% for item in site.education %}
+        <li class="entry">
+            <div class="period">{{ item.period }}</div>
+            <div class="name">{{ item.name }}</div>
+            <div class="location">{{ item.location }}</div>
+            <div class="studies">{{ item.studies }}</div>
         </li>{% endfor %}
     </ul>
 

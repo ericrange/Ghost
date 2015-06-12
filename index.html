@@ -40,7 +40,7 @@ layout: default
         <h3>Experience</h3>
         <ul class="vita-list">
             {% for item in site.vita %}
-            <li class="entry" itemprop="worksFor" itemtype="http://schema.org/Organization">
+            <li class="entry" itemprop itemtype="http://schema.org/Organization">
                 <div class="period">{{ item.period }}</div>
                 <div class="company" itemprop="name">{{ item.company }}</div>
                 <div class="job">{{ item.job }}</div>

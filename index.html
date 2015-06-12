@@ -46,9 +46,9 @@ layout: default
     </ul>
 
     <h3>Education</h3>
-    <ul class="vita-list" itemscope itemtype="http://schema.org/EducationalOrganization">
+    <ul class="vita-list">
         {% for item in site.education %}
-        <li class="entry">
+        <li class="entry" itemscope itemtype="http://schema.org/EducationalOrganization">
             <div class="period">{{ item.period }}</div>
             <div class="name" itemprop="name">{{ item.name }}</div>
             <div class="location" itemprop="location">{{ item.location }}</div>

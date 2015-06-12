@@ -36,11 +36,11 @@ layout: default
 
     <h2>Background</h2>
     <h3>Experience</h3>
-    <ul class="vita-list" itemscope itemtype="http://schema.org/Organization">
+    <ul class="vita-list">
         {% for item in site.vita %}
         <li class="entry">
             <div class="period">{{ item.period }}</div>
-            <div class="company" itemprop="name">{{ item.company }}</div>
+            <div class="company" itemprop="worksFor">{{ item.company }}</div>
             <div class="job" itemprop="jobTitle">{{ item.job }}</div>
         </li>{% endfor %}
     </ul>

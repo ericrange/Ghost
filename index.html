@@ -35,25 +35,30 @@ layout: default
 <div class="right shadow">
 
     <h2>Background</h2>
-    <h3>Experience</h3>
-    <ul class="vita-list">
-        {% for item in site.vita %}
-        <li class="entry" itemprop="worksFor" itemtype="http://schema.org/Organization">
-            <div class="period">{{ item.period }}</div>
-            <div class="company" itemprop="name">{{ item.company }}</div>
-            <div class="job">{{ item.job }}</div>
-        </li>{% endfor %}
-    </ul>
+    
+    <section class="experience">
+        <h3>Experience</h3>
+        <ul class="vita-list">
+            {% for item in site.vita %}
+            <li class="entry" itemprop="worksFor" itemtype="http://schema.org/Organization">
+                <div class="period">{{ item.period }}</div>
+                <div class="company" itemprop="name">{{ item.company }}</div>
+                <div class="job">{{ item.job }}</div>
+            </li>{% endfor %}
+        </ul>
+    </section>
 
-    <h3>Education</h3>
-    <ul class="vita-list">
-        {% for item in site.education %}
-        <li class="entry" itemscope itemtype="http://schema.org/EducationalOrganization">
-            <div class="period">{{ item.period }}</div>
-            <div class="name" itemprop="name">{{ item.name }}</div>
-            <div class="location" itemprop="location">{{ item.location }}</div>
-            <div class="studies">{{ item.studies }}</div>
-        </li>{% endfor %}
-    </ul>
+    <section class="education">
+        <h3>Education</h3>
+        <ul class="vita-list">
+            {% for item in site.education %}
+            <li class="entry" itemscope itemtype="http://schema.org/EducationalOrganization">
+                <div class="period">{{ item.period }}</div>
+                <div class="name" itemprop="name">{{ item.name }}</div>
+                <div class="location" itemprop="location">{{ item.location }}</div>
+                <div class="studies">{{ item.studies }}</div>
+            </li>{% endfor %}
+        </ul>
+    </section>
 
 </div>

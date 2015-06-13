@@ -1,12 +1,12 @@
 @import "normalize.scss";
-$Color: #2fb03f;
+$Color: #2CAE3C;
 * {
     font-family: "Open Sans", Arial;
     box-sizing: border-box;
 }
 body {
     background-color: #eee;
-    border-top: solid 10px $Color;
+    border-top: solid 5px $Color;
     padding-top: 50px;
 }
 .wrapper {
@@ -35,7 +35,6 @@ ul {
         font-size: 16px;
     }
     .skills {
-        margin-top: 15px;
         .skill-list {
             margin-top: 15px;
             .skill {
@@ -54,10 +53,11 @@ ul {
     .widget {
         background-color: #fff;
         padding: 15px;
+        margin-bottom: 15px;
         &.about-me {
             text-align: center;
             line-height: 22px;
-            padding: 30px inherit;
+            padding: 45px inherit;
             .job {
                 color: $Color;
             }
@@ -72,14 +72,8 @@ ul {
             .location {
                 color: #999;
             }
-        }
-        &.contact {
-            font-size: 15px;
             .email {
-                color: #999;
-                &::after {
-                    content: "mail@eric-range.de";
-                }
+                margin-top: 15px;
             }
         }
     }
@@ -88,21 +82,32 @@ ul {
     width: 735px;
     margin-left: 265px;
     background-color: #fff;
-    line-height: 20px;
+    line-height: 22px;
     > h2 {
-        border-bottom: solid 1px #ddd;
+        border-bottom: dashed 1px #ddd;
         padding: 15px 30px 12px;
         font-weight: 300;
-        font-size: 18px;
+        font-size: 16px;
         color: #999;
     }
-    > h3 {
+    h3 {
         font-weight: normal;
         padding-left: 30px;
         margin-bottom: 15px;
-        font-size: 18px;
+        font-size: 16px;
         margin-top: 15px;
     }
+
+    .education {
+        .vita-list{
+            .entry {
+                &:last-child {
+                    padding-bottom: 30px;
+                }
+            }
+        }
+    }
+
     .vita-list {
         border-left: solid 1px #ddd;
         margin: 0 35px;

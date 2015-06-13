@@ -11,11 +11,21 @@ module.exports = function (grunt) {
 		watch: {
 			styles: {
 				files: ["scss/styles.scss"],
-				tasks: ["sass"]
+				tasks: ["sass", "cssmin"]
 			},
 			html: {
-				files: ["_site/index.html"],
-				tasks: ["htmlmin", "compress"]
+				files: ["_site/html.index"],
+				tasks: ["htmlmin"]
+			}
+		},
+		cssmin: {
+			options: {
+				keepSpecialComments: false
+			},
+			target: {
+				files: {
+					'css/styles.css': ['css/styles.css']
+				}
 			}
 		},
 		htmlmin: {
@@ -52,6 +62,16 @@ module.exports = function (grunt) {
 				src: ["**/*.jpg"],
 				dest: "_site/",
 				ext: ".jpg.gz"
+			},
+			css: {
+				options: {
+					mode: "gzip"
+				},
+				expand: true,
+				cwd: "_site/",
+				src: ["**/*.css"],
+				dest: "_site/",
+				ext: ".css.gz"
 			}
 		}
 	});
@@ -60,9 +80,11 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks("grunt-contrib-htmlmin");
 	grunt.loadNpmTasks("grunt-contrib-compress");
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
 	grunt.registerTask("html", ["htmlmin"]);
 	grunt.registerTask("gzip", ["compress"]);
+
 
 	grunt.registerTask("default", ["watch"]);
 };

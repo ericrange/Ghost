@@ -14,7 +14,7 @@ module.exports = function (grunt) {
 				tasks: ["sass", "cssmin"]
 			},
 			html: {
-				files: ["_site/html.index"],
+				files: ["_site/index.html"],
 				tasks: ["htmlmin"]
 			}
 		},
@@ -24,7 +24,7 @@ module.exports = function (grunt) {
 			},
 			target: {
 				files: {
-					'css/styles.css': ['css/styles.css']
+					"css/styles.css": ["css/styles.css"]
 				}
 			}
 		},
@@ -80,7 +80,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks("grunt-contrib-htmlmin");
 	grunt.loadNpmTasks("grunt-contrib-compress");
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks("grunt-contrib-cssmin");
 
 	grunt.registerTask("html", ["htmlmin"]);
 	grunt.registerTask("gzip", ["compress"]);

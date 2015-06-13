@@ -362,7 +362,7 @@ th {
 
 body {
   background-color: #eee;
-  border-top: solid 10px #2fb03f;
+  border-top: solid 5px #2cae3c;
   padding-top: 50px; }
 
 .wrapper {
@@ -389,29 +389,28 @@ ul {
   .left .widget-title {
     font-weight: normal;
     font-size: 16px; }
-  .left .skills {
+  .left .skills .skill-list {
     margin-top: 15px; }
-    .left .skills .skill-list {
-      margin-top: 15px; }
-      .left .skills .skill-list .skill {
-        background-color: #eee;
-        padding: 3px 7px;
-        font-size: 11px;
-        float: left;
-        margin-right: 3px;
-        margin-bottom: 3px;
-        border-radius: 3px;
-        line-height: 17px;
-        color: #555; }
+    .left .skills .skill-list .skill {
+      background-color: #eee;
+      padding: 3px 7px;
+      font-size: 11px;
+      float: left;
+      margin-right: 3px;
+      margin-bottom: 3px;
+      border-radius: 3px;
+      line-height: 17px;
+      color: #555; }
   .left .widget {
     background-color: #fff;
-    padding: 15px; }
+    padding: 15px;
+    margin-bottom: 15px; }
     .left .widget.about-me {
       text-align: center;
       line-height: 22px;
-      padding: 30px inherit; }
+      padding: 45px inherit; }
       .left .widget.about-me .job {
-        color: #2fb03f; }
+        color: #2cae3c; }
       .left .widget.about-me .name {
         margin: 15px 0 5px;
         font-size: 24px; }
@@ -420,30 +419,28 @@ ul {
         width: 100px; }
       .left .widget.about-me .location {
         color: #999; }
-    .left .widget.contact {
-      font-size: 15px; }
-      .left .widget.contact .email {
-        color: #999; }
-        .left .widget.contact .email::after {
-          content: "mail@eric-range.de"; }
+      .left .widget.about-me .email {
+        margin-top: 15px; }
 
 .right {
   width: 735px;
   margin-left: 265px;
   background-color: #fff;
-  line-height: 20px; }
+  line-height: 22px; }
   .right > h2 {
-    border-bottom: solid 1px #ddd;
+    border-bottom: dashed 1px #ddd;
     padding: 15px 30px 12px;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 16px;
     color: #999; }
-  .right > h3 {
+  .right h3 {
     font-weight: normal;
     padding-left: 30px;
     margin-bottom: 15px;
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 15px; }
+  .right .education .vita-list .entry:last-child {
+    padding-bottom: 30px; }
   .right .vita-list {
     border-left: solid 1px #ddd;
     margin: 0 35px;
@@ -458,7 +455,7 @@ ul {
         top: 5px;
         width: 7px;
         height: 7px;
-        border: solid 1px #2fb03f;
+        border: solid 1px #2cae3c;
         display: block;
         border-radius: 50%;
         float: left;
@@ -472,11 +469,9 @@ ul {
       font-size: 12px; }
     .right .vita-list .company,
     .right .vita-list .name {
-      color: #2fb03f; }
+      color: #2cae3c; }
 
 .clearfix:after {
   content: "";
   display: table;
   clear: both; }
-
-/*# sourceMappingURL=styles.css.map */

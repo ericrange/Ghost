@@ -14,8 +14,11 @@ module.exports = function (grunt) {
 				tasks: ["sass", "cssmin"]
 			},
 			html: {
+				options: {
+      debounceDelay: 1000,
+    },
 				files: ["_site/index.html"],
-				tasks: ["htmlmin"]
+				tasks: ["htmlmin", "compress"]
 			}
 		},
 		cssmin: {

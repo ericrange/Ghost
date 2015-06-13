@@ -1,6 +1,9 @@
 exclude: 
   - node_modules
   - scss
+  - package.json
+  - gruntfile.js
+  - start.cmd
 
 # Site settings
 title: Your awesome title

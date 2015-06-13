@@ -4,6 +4,7 @@ exclude:
   - package.json
   - gruntfile.js
   - start.cmd
+  - coffee
 
 # Site settings
 title: Your awesome title

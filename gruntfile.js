@@ -8,6 +8,13 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		coffee: {
+			compile: {
+				files: {
+					"js/scripts.js": ["coffee/*.coffee"]
+				}
+			}
+		},
 		watch: {
 			styles: {
 				files: ["scss/styles.scss"],
@@ -15,8 +22,8 @@ module.exports = function (grunt) {
 			},
 			html: {
 				options: {
-      debounceDelay: 1000,
-    },
+					debounceDelay: 1000,
+				},
 				files: ["_site/index.html"],
 				tasks: ["htmlmin", "compress"]
 			}
@@ -42,6 +49,13 @@ module.exports = function (grunt) {
 				},
 				files: {
 					"_site/index.html": "_site/index.html"
+				}
+			}
+		},
+		uglify: {
+			default: {
+				files: {
+					'js/scripts.min.js': ['js/scripts.js']
 				}
 			}
 		},
@@ -75,6 +89,16 @@ module.exports = function (grunt) {
 				src: ["**/*.css"],
 				dest: "_site/",
 				ext: ".css.gz"
+			},
+			js: {
+				options: {
+					mode: "gzip"
+				},
+				expand: true,
+				cwd: "_site/",
+				src: ["**/*.js"],
+				dest: "_site/",
+				ext: ".js.gz"
 			}
 		}
 	});
@@ -84,10 +108,12 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-contrib-htmlmin");
 	grunt.loadNpmTasks("grunt-contrib-compress");
 	grunt.loadNpmTasks("grunt-contrib-cssmin");
+	grunt.loadNpmTasks("grunt-contrib-coffee");
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 
 	grunt.registerTask("html", ["htmlmin"]);
 	grunt.registerTask("gzip", ["compress"]);
-
+	grunt.registerTask("js", ["coffee", "uglify"]);
 
 	grunt.registerTask("default", ["watch"]);
 };

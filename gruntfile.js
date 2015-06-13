@@ -12,6 +12,10 @@ module.exports = function (grunt) {
 			styles: {
 				files: ["scss/styles.scss"],
 				tasks: ["sass", "cssmin"]
+			},
+			html: {
+				files: ["_site/html.index"],
+				tasks: ["htmlmin"]
 			}
 		},
 		cssmin: {
@@ -58,6 +62,16 @@ module.exports = function (grunt) {
 				src: ["**/*.jpg"],
 				dest: "_site/",
 				ext: ".jpg.gz"
+			},
+			css: {
+				options: {
+					mode: "gzip"
+				},
+				expand: true,
+				cwd: "_site/",
+				src: ["**/*.css"],
+				dest: "_site/",
+				ext: ".css.gz"
 			}
 		}
 	});

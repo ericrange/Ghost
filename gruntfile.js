@@ -4,31 +4,73 @@ module.exports = function (grunt) {
 		sass: {
 			dist: {
 				files: {
-					'css/styles.css': 'scss/styles.scss'
+					"css/styles.css": "scss/styles.scss"
 				}
 			}
 		},
 		watch: {
 			styles: {
-				files: ['scss/styles.scss'],
-				tasks: ['sass']
-			},
+				files: ["scss/styles.scss"],
+				tasks: ["sass", "cssmin"]
+			}
 		},
 		cssmin: {
 			options: {
-
+				keepSpecialComments: false
 			},
 			target: {
 				files: {
 					'css/styles.css': ['css/styles.css']
 				}
 			}
+		},
+		htmlmin: {
+			dist: {
+				options: {
+					removeComments: true,
+					collapseWhitespace: true,
+					removeEmptyAttributes: true,
+					removeScriptTypeAttributes: true,
+					removeStyleLinkTypeAttributes: true
+				},
+				files: {
+					"_site/index.html": "_site/index.html"
+				}
+			}
+		},
+		compress: {
+			html: {
+				options: {
+					mode: "gzip"
+				},
+				expand: true,
+				cwd: "_site/",
+				src: ["**/*.html"],
+				dest: "_site/",
+				ext: ".html.gz"
+			},
+			jpg: {
+				options: {
+					mode: "gzip"
+				},
+				expand: true,
+				cwd: "_site/",
+				src: ["**/*.jpg"],
+				dest: "_site/",
+				ext: ".jpg.gz"
+			}
 		}
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks("grunt-contrib-sass");
+	grunt.loadNpmTasks("grunt-contrib-watch");
+	grunt.loadNpmTasks("grunt-contrib-htmlmin");
+	grunt.loadNpmTasks("grunt-contrib-compress");
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+
+	grunt.registerTask("html", ["htmlmin"]);
+	grunt.registerTask("gzip", ["compress"]);
+
 
 	grunt.registerTask("default", ["watch"]);
 };

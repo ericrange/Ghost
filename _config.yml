@@ -1,3 +1,10 @@
+exclude: 
+  - node_modules
+  - scss
+  - package.json
+  - gruntfile.js
+  - start.cmd
+
 # Site settings
 title: Your awesome title
 email: your-email@domain.com
@@ -16,9 +23,11 @@ skills:
   - Nginx
   - Apache
   - HTML5
-  - ECMAScript6
-  - MongoDB
   - NodeJS
+  - ECMAScript6
+  - UI
+  - UX
+  - MongoDB
   - Web Engineering
   - SharePoint
 vita:

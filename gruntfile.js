@@ -26,6 +26,10 @@ module.exports = function (grunt) {
 				},
 				files: ["_site/index.html"],
 				tasks: ["htmlmin", "compress"]
+			},
+			coffee: {
+				files: ["coffee/**/*.coffee"],
+				tasks: ["coffee", "uglify"]
 			}
 		},
 		cssmin: {
@@ -99,6 +103,16 @@ module.exports = function (grunt) {
 				src: ["**/*.js"],
 				dest: "_site/",
 				ext: ".js.gz"
+			},
+			minjs: {
+				options: {
+					mode: "gzip"
+				},
+				expand: true,
+				cwd: "_site/",
+				src: ["**/*.min.js"],
+				dest: "_site/",
+				ext: ".min.js.gz"
 			}
 		}
 	});

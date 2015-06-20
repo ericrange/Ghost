@@ -1,4 +1,4 @@
-exclude: 
+exclude:
   - node_modules
   - scss
   - package.json
@@ -41,7 +41,7 @@ vita:
 
 education:
   - name: Friedrich-Schiller-Universität
-    period: September 2014 - Present
+    period: October 2013 - Present
     location: Jena, Germany
     studies: M.Sc. Business Informatics
   - name: Duale Hochschule Baden-Württemberg

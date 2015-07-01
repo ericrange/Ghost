@@ -2,18 +2,20 @@
 layout: default
 ---
 
-<div class="left">
+<div class="left clearfix">
+    <div class="widget-container">
     <div class="widget about-me shadow">
         <img class="image" src="images/me.jpg" alt="Me">
-        <h1 class="name" itemprop="name">Eric Range</h1>
-        <div class="job" itemprop="jobTitle">Fullstack Developer</div>
+        <h1 class="name" itemprop="name">{{ site.name }}</h1>
+        <div class="job" itemprop="jobTitle">{{ site.job }}</div>
         <div class="academic-title" itemprop="honorificSuffix">{{ site.honorificSuffix }}</div>
-        <div class="location" itemprop="workLocation">Jena, Germany</div>
+        <div class="location" itemprop="workLocation">{{ site.location }}</div>
         <div class="contact">
-            <div class="email" itemprop="email">mail@eric-range.de</div>
+            <div class="email" itemprop="email">{{ site.email }}</div>
         </div>
     </div>
-
+</div>
+    <div class="widget-container">
     <div class="widget skills shadow" itemscope itemtype="http://schema.org/ItemList">
         <h3 class="widget-title" itemprop="name">Skills</h3>
         <ul class="skill-list clearfix">
@@ -22,6 +24,7 @@ layout: default
             {% endfor %}
         </ul>
     </div>
+</div>
 </div>
 
 <div class="right shadow">

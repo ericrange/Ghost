@@ -130,5 +130,5 @@ module.exports = function (grunt) {
 	grunt.registerTask("js", ["coffee", "uglify"]);
 
 	grunt.registerTask("watch", ["watch"]);
-	grunt.registerTask("default", ["htmlmin", "uglify", "compress"]);
+	grunt.registerTask("default", ["sass", "coffee", "htmlmin", "uglify", "compress"]);
 };

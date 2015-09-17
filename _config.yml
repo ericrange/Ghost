@@ -25,6 +25,7 @@ skills:
   - MongoDB
   - Web Engineering
   - SharePoint
+
 vita:
   - company: Jenoptik AG
     period: September 2014 - Present
@@ -35,12 +36,16 @@ vita:
 
 education:
   - name: Friedrich-Schiller-Universität
-    period: October 2013 - Present
+    period: October 2013 - September 2016
     location: Jena, Germany
     studies: M.Sc. Business Informatics
   - name: Duale Hochschule Baden-Württemberg
     period: October 2010 - September 2013
     location: Mannheim, Germany
     studies: B.Sc. Business Informatics
+  - name: Technische Universität Ilmenau
+    period: October 2008 - September 2010
+    location: Ilmenau, Germany
+    studies: Pre-Studies Program
 
 honorificSuffix: B.Sc. Business Informatics

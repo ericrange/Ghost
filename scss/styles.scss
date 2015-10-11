@@ -1,202 +1,203 @@
 @import "normalize.scss";
-$Color: #2CAE3C;
+$Color: #2cae3c;
 $TabletWidth: 830px;
 $HandyWidth: 640px;
 $MiniHandy: 500px;
 * {
-    font-family: "Open Sans", Arial;
-    box-sizing: border-box;
+  font-family: "Open Sans", Arial;
+  box-sizing: border-box;
 }
 body {
-    padding: 50px;
-    @media all and (max-width: $TabletWidth) {
-        padding: 30px;
-    }
-    @media all and (max-width: $MiniHandy) {
-        padding: 15px;
-    }
+  padding: 50px;
+  @media all and (max-width: $TabletWidth) {
+    padding: 30px;
+  }
+  @media all and (max-width: $MiniHandy) {
+    padding: 15px;
+  }
 }
 .wrapper {
-    width: 100%;
-    max-width: 750px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
 }
 ul {
-    list-style: none;
+  list-style: none;
 }
 h1,
 h2,
 h3,
 ul {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
 }
-
 .left {
-    float: left;
-    width: 250px;
-    padding-right: 15px;
-    position: relative;
-    @media all and (max-width: $TabletWidth) {
-        float: none;
-        width: 100%;
-        padding-right: 0;
-        .widget-container {
-            width: 100%;
-            float: left;
-            padding-right: 15px;
-	* {text-align: left;}
-        }
+  float: left;
+  width: 250px;
+  padding-right: 15px;
+  position: relative;
+  @media all and (max-width: $TabletWidth) {
+    float: none;
+    width: 100%;
+    padding-right: 0;
+    .widget-container {
+      width: 100%;
+      float: left;
+      padding-right: 15px;
+      * {
+        text-align: left;
+      }
     }
-    @media all and (max-width: $HandyWidth) {
-        .widget-container {
-            width: 100%;
-            float: none;
-            padding-right: 0;
-        }
+  }
+  @media all and (max-width: $HandyWidth) {
+    .widget-container {
+      width: 100%;
+      float: none;
+      padding-right: 0;
     }
-    .widget-title {
+  }
+  .widget-title {
+    text-align: center;
+    border-bottom: dashed 1px #ddd;
+    padding-bottom: 15px;
+    font-size: 16px;
+  }
+  .skills {
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 15px;
+      .skill {
+        background-color: #f1f1f1;
+        padding: 4px 7px;
+        font-size: 12px;
+        float: left;
+        margin-right: 3px;
+        margin-bottom: 3px;
+        border-radius: 3px;
+        line-height: 17px;
+        color: #555;
+        white-space: nowrap;
+        flex-grow: 1;
         text-align: center;
-        border-bottom: dashed 1px #ddd;
-        padding-bottom: 15px;
-        font-size: 16px;
-    }
-    .skills {
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 15px;
-            .skill {
-                background-color: #f1f1f1;
-                padding: 4px 7px;
-                font-size: 12px;
-                float: left;
-                margin-right: 3px;
-                margin-bottom: 3px;
-                border-radius: 3px;
-                line-height: 17px;
-                color: #555;
-                white-space: nowrap;
-                flex-grow: 1;
-                text-align: center;
-                @media all and (max-width: $TabletWidth) {
-                    background-color: #fff;
-                    font-size: 14px;
-                    width: 50%;
-                    margin: 3px 0;
-                }
-            }
+        @media all and (max-width: $TabletWidth) {
+          background-color: #fff;
+          font-size: 14px;
+          width: 50%;
+          margin: 3px 0;
         }
+      }
     }
-    .widget {
-        background-color: #fff;
-        padding: 15px;
+  }
+  .widget {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    &.about-me {
+      @media all and (max-width: $TabletWidth) {
+        text-align: left;
+      }
+      text-align: center;
+      line-height: 22px;
+      padding: 15px;
+      .job {
+        color: $Color;
         margin-bottom: 15px;
-        &.about-me {
-@media all and (max-width: $TabletWidth) {
-text-align: left;
-}
-            text-align: center;
-            line-height: 22px;
-            padding: 15px;
-            .job {
-                color: $Color;
-                margin-bottom: 15px;
-            }
-            .name {
-                margin: 15px 0 5px;
-                font-size: 24px;
-            }
-            .image {
-                border-radius: 50%;
-                width: 100px;
-            }
-            .location, .academic-title {
-                color: #999;
-            }
-            .email {
-                margin-top: 15px;
-            }
-        }
+      }
+      .name {
+        margin: 15px 0 5px;
+        font-size: 24px;
+      }
+      .image {
+        border-radius: 50%;
+        width: 100px;
+      }
+      .location,
+      .academic-title {
+        color: #999;
+      }
+      .email {
+        margin-top: 15px;
+      }
     }
+  }
 }
 .right {
-    min-width: 500px;
-    margin-left: 250px;
-    background-color: #fff;
-    line-height: 22px;
-    @media all and (max-width: $TabletWidth) {
-        width: 100%;
-        margin-left: 0;
+  min-width: 500px;
+  margin-left: 250px;
+  background-color: #fff;
+  line-height: 22px;
+  @media all and (max-width: $TabletWidth) {
+    width: 100%;
+    margin-left: 0;
+  }
+  > h2 {
+    border-bottom: dashed 1px #ddd;
+    padding: 15px 30px 12px;
+    font-weight: 300;
+    font-size: 1.2em;
+    color: #999;
+  }
+  h3 {
+    font-weight: normal;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    margin-top: 15px;
+  }
+  .vita-list {
+    border-left: 1px solid #ddd;
+    margin: 0 15px 30px 35px;
+    padding-left: 30px;
+    @media all and (max-width: $HandyWidth) {
+      padding-left: 15px;
     }
-    > h2 {
-        border-bottom: dashed 1px #ddd;
-        padding: 15px 30px 12px;
-        font-weight: 300;
-        font-size: 1.2em;
-        color: #999;
-    }
-    h3 {
-        font-weight: normal;
-        padding-left: 30px;
-        margin-bottom: 15px;
-        font-size: 1em;
-        margin-top: 15px;
-    }
-    .vita-list {
-        border-left: 1px solid #DDD;
-margin: 0px 15px 30px 35px;
-padding-left: 30px;
+    .entry {
+      padding-bottom: 15px;
+      font-size: 16px;
+      @media all and (max-width: $HandyWidth) {
+        font-size: 14px;
+      }
+      &::before {
+        content: "";
+        position: relative;
+        left: -35px;
+        top: 7px;
+        width: 7px;
+        height: 7px;
+        border: solid 1px $Color;
+        display: block;
+        border-radius: 50%;
+        float: left;
+        background-color: #fff;
+        margin-right: -9px;
         @media all and (max-width: $HandyWidth) {
-            padding-left: 15px;
+          left: -20px;
         }
-        .entry {
-            padding-bottom: 15px;
-            font-size: 16px;
-            @media all and (max-width: $HandyWidth) {
-                font-size: 14px;
-            }
-            &::before {
-                content: "";
-                position: relative;
-                left: -35px;
-                top: 7px;
-                width: 7px;
-                height: 7px;
-                border: solid 1px $Color;
-                display: block;
-                border-radius: 50%;
-                float: left;
-                background-color: #fff;
-                margin-right: -9px;
-
-                @media all and (max-width: $HandyWidth) {
-                    left: -20px;
-                }
-            }
-            &:last-child {
-                padding-bottom: 15px;
-            }
-        }
-        .period {
-            color: #999;
-            text-transform: uppercase;
-            font-size: 12px;
-        }
-        .company,
-        .name {
-            color: $Color;
-        }
-        .job {
-
-        }
+      }
+      &:last-child {
+        padding-bottom: 15px;
+      }
     }
+    .period {
+      color: #999;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    .company,
+    .name {
+      color: $Color;
+    }
+    .job {
+
+    }
+  }
 }
 .clearfix {
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }

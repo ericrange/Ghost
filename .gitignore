@@ -1,2 +1,3 @@
-node_modules
-core/**/*
+/.sass-cache
+/node_modules
+/js

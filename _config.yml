@@ -14,19 +14,22 @@ markdown: kramdown
 name: Eric Range
 email: eric.range@live.de
 location: Jena, Germany
-job : Web Application Consultant
+job : IT System Engineer
 
 vita:
-  - company: Jenoptik AG
+  - company: Jenoptik SSC GmbH
+    period: September 2016 - present
+    job: IT System Engineer
+  - company: Jenoptik SSC GmbH
     period: September 2014 - present
-    job: Web Application Consultant
+    job: Working Student
   - company: Evonik Industries AG
     period: October 2010 - September 2013
     job: Working Student
 
 education:
   - name: Friedrich-Schiller-University Jena
-    period: September 2013 - August 2016
+    period: October 2013 - September 2016
     location: Jena, Germany
     studies: M.Sc. Business Informatics
   - name: Baden-Wuerttemberg Cooperative State University
@@ -34,4 +37,4 @@ education:
     location: Mannheim, Germany
     studies: B.Sc. Business Informatics
 
-honorificSuffix: B.Sc. Business Informatics
+honorificSuffix: M.Sc. Business Informatics

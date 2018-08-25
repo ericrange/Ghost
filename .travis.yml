@@ -7,3 +7,4 @@ before_script:
   - npm install
 script:
   - grunt
+  - tar czf release.tar.gz _site

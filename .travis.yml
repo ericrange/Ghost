@@ -14,5 +14,3 @@ deploy:
   api_key: "4fad2c55f955d6e87ba9b0c6bfaf0cfb3716bdc7"
   file: "release.tar.gz"
   skip_cleanup: true
-  on:
-    tags: true

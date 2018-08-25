@@ -13,11 +13,13 @@ markdown: kramdown
 
 name: Eric Range
 email: eric.range@live.de
+blog: https://blog.eric-range.de
 location: Jena, Germany
 job : IT System Engineer
 
 vita:
   - company: Enginsight GmbH
+    url: https://enginsight.com
     period: September 2017 - present
     job: Managing Director
   - company: Enginsight UG (haftungsbeschränkt) & Co. KG
